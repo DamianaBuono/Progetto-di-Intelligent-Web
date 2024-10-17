@@ -75,7 +75,7 @@ const Storia = () => {
             <div className="col-md-4 mb-4" key={item.storia.value}>
               <div className="card h-100">
                 <img
-                  src={`/images/periodo/${item.storia.value.replace(" ", "_")}.jpg`} // Assicurati che l'immagine esista
+                  src={`/images/periodo/${item.storia.value.split('#')[1]}.jpg`} // Assicurati che l'immagine esista
                   className="card-img-top"
                   alt={item.periodoS.value}
                 />

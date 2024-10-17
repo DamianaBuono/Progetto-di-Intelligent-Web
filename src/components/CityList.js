@@ -55,7 +55,7 @@ const CityList = () => {
               <div className="col-md-4 mb-4" key={city.city.value}>
                 <div className="card h-100">
                   <img
-                    src={`/images/${cityName}.jpg`} 
+                    src={`/images/citta/${cityName}.jpg`} 
                     className="card-img-top"
                     alt={cityName}
                   />

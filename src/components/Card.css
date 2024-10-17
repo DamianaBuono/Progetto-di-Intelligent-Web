@@ -1,0 +1,152 @@
+/* src/Card.css */
+
+body {
+    background: #f2f4f8;
+    font-family: "Open Sans";
+  }
+  
+  .artboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .card {
+    width: 25rem; /* Dimensioni ridotte per contenere più card sulla stessa riga */
+    height: 40rem;
+  }
+  
+  
+  .card__side {
+    height: 30rem;
+    width: 100%;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .card__side--front {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(139, 0, 0, 0.5),
+        rgba(159, 52, 52, 0.5) /* Sfumatura rossa */
+    ),
+    url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Mantieni questa proprietà */
+}
+
+  .card__side--back {
+    background-color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .card__theme {
+    position: absolute; /* Mantieni come assoluto */
+    top: 0; /* Posizione in alto */
+    left: 0; /* Posizione a sinistra */
+    transform: none; /* Rimuovi la trasformazione */
+    text-align: left; /* Allinea il testo a sinistra */
+    width: 90%; /* Mantieni una larghezza adeguata se necessario */
+}
+  
+  .card__theme-box {
+    margin-bottom: 5rem; /* Ridotto per adattarsi alla card ridimensionata */
+  }
+  
+  .card__subject {
+    font-size: 1.2rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    position: absolute; /* Posizionamento assoluto */
+    top: 1rem; /* Spaziatura dal bordo superiore */
+    left: 1rem; /* Spaziatura dal bordo sinistro */
+    margin: 0; /* Rimuovi margini aggiuntivi */
+    color: #8b0000; /* Colore del titolo */
+    z-index: 2; /* Assicurati che sia sopra l'overlay e l'immagine */
+}
+  
+  
+  .card__cover {
+    height: 10rem; /* Ridotto per adattarsi alla card ridimensionata */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    background-image: linear-gradient(
+        to top right,
+        rgba(139,0,0),
+        rgba(159,52,52)
+      ),
+      url(https://cdn.spacetelescope.org/archives/images/screen/heic0406a.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card__details {
+    padding: 2rem 1rem;
+  }
+  
+  .card__details ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .card__details li {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .card__details li:last-child {
+    border: none;
+  }
+  
+  .card:hover .card__side--back {
+    transform: rotateY(0);
+  }
+  
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  
+/* Aggiungi classi specifiche per ogni card */
+.card--storia .card__side--front {
+    background-image: url('C:\Users\39331\Desktop\giappone-guide\public\images\homepage\history.jpg'); /* Usa un percorso relativo */
+    background-size: cover;
+    background-position: center;
+}
+  
+.card--citta .card__side--front {
+    background-image: url('C:\Users\39331\Desktop\giappone-guide\public\images\homepage\city.jpg'); /* Usa un percorso relativo */
+    background-size: cover;
+    background-position: center;
+}
+  
+.card--parchi .card__side--front {
+    background-image: url('C:\Users\39331\Desktop\giappone-guide\public\images\homepage\parks.jpg'); /* Usa un percorso relativo */
+    background-size: cover;
+    background-position: center;
+}
+
+  /* Aggiungi proprietà comuni per tutte le card */
+  .card__side--front {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: blur(0.4px); /* Applicazione dell'effetto sfocato */
+  }
+  

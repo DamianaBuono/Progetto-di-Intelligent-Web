@@ -1,0 +1,48 @@
+/* src/components/Slider.css */
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: 600px; /* Aumenta l'altezza qui, ad esempio 600px o più */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+ 
+  
+  .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+  
+  .caption h2 {
+    font-size: 2rem;
+    margin: 0 0 10px;
+  }
+  
+  .caption p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  

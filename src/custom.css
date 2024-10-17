@@ -1,0 +1,19 @@
+/* src/custom.css */
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+  
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #f1c40f;
+  }
+  
+  .navbar-dark .navbar-brand {
+    color: #ecf0f1;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  

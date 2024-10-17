@@ -1,0 +1,24 @@
+.footer {
+    background-color: #8b0000; /* Rosso scuro */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .footer .contact-info {
+    margin-bottom: 10px;
+  }
+  
+  .footer .social-icons a {
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #ff8383; /* Colore rosa chiaro al passaggio del mouse */
+  }
+  

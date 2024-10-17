@@ -125,19 +125,19 @@ body {
   
 /* Aggiungi classi specifiche per ogni card */
 .card--storia .card__side--front {
-    background-image: url('C:\Users\39331\Desktop\giappone-guide\public\images\homepage\history.jpg'); /* Usa un percorso relativo */
+    background-image: url('/public/images/homepage/history.jpg'); /* Usa un percorso relativo */
     background-size: cover;
     background-position: center;
 }
   
 .card--citta .card__side--front {
-    background-image: url('C:\Users\39331\Desktop\giappone-guide\public\images\homepage\city.jpg'); /* Usa un percorso relativo */
+    background-image: url('/public/images/homepage/city.jpg'); /* Usa un percorso relativo */
     background-size: cover;
     background-position: center;
 }
   
 .card--parchi .card__side--front {
-    background-image: url('C:\Users\39331\Desktop\giappone-guide\public\images\homepage\parks.jpg'); /* Usa un percorso relativo */
+    background-image: url('/public/images/homepage/parks.jpg'); /* Usa un percorso relativo */
     background-size: cover;
     background-position: center;
 }

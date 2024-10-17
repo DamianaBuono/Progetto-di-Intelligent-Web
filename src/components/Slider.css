@@ -13,7 +13,7 @@
   
   .slide {
     min-width: 100%;
-    height: 600px; /* Aumenta l'altezza qui, ad esempio 600px o più */
+    height: 600px; /* Aumenta l'altezza */
     position: relative;
     background-size: cover;
     background-position: center;

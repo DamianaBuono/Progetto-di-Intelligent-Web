@@ -10,7 +10,7 @@ import Gastronomia from './components/Gastronomia';
 import Posti from './components/Posti';
 import Storia from './components/Storia';
 import Footer from './Footer';
-import Slider from './Slider';
+
 
 
 function App() {
@@ -28,8 +28,8 @@ function App() {
             <Route path="/posti-da-visitare" element={<Posti />} />
             <Route path="/storia" element={<Storia />} />
           </Routes>
-        </div>
-        <Slider />
+        </div>   
+            
         <Footer />
       </div>
     </Router>

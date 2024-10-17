@@ -95,10 +95,11 @@ const CityActivitiesList = () => {
         temples: `
           PREFIX giappone: <http://www.example.org/giappone#>
           PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-          SELECT ?temple
+          SELECT ?temple ?value
           WHERE {
             ?temple rdf:type giappone:TempliESantuari .
             ?temple giappone:nellaCittà giappone:${cityName} .
+            ?temple giappone:tipoLuogoDiCulto ?value .
           }
         `,
         spas: `
@@ -210,6 +211,7 @@ const CityActivitiesList = () => {
             {temples.map((temple) => (
               <li className="list-group-item" key={temple?.temple?.value || 'unknown'}>
                 {temple?.temple?.value.split('#')[1] || 'N/A'}
+                <p className="card-text">Tipologia: {temple?.value?.value || 'N/A'}</p>
               </li>
             ))}
           </ul>
@@ -218,7 +220,7 @@ const CityActivitiesList = () => {
       
       {spas.length > 0 && (
         <div>
-          <h3>Termali</h3>
+          <h3>Terme</h3>
           <ul className="list-group mb-3">
             {spas.map((spa) => (
               <li className="list-group-item" key={spa?.spa?.value || 'unknown'}>

@@ -149,6 +149,15 @@
     
 
 
+    <!-- http://www.example.org/giappone#AutoreArtista -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/giappone#AutoreArtista">
+        <rdfs:domain rdf:resource="http://www.example.org/giappone#Cultura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.example.org/giappone#annoFine -->
 
     <owl:DatatypeProperty rdf:about="http://www.example.org/giappone#annoFine">
@@ -217,15 +226,6 @@
 
     <owl:DatatypeProperty rdf:about="http://www.example.org/giappone#tipoLuogoDiCulto">
         <rdfs:domain rdf:resource="http://www.example.org/giappone#TempliESantuari"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.example.org/giappone#Autore/Artista -->
-
-    <owl:DatatypeProperty rdf:about="http://www.example.org/giappone#Autore/Artista">
-        <rdfs:domain rdf:resource="http://www.example.org/giappone#Cultura"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -743,10 +743,10 @@
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Chindogu">
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiVisive"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Heisei"/>
+        <AutoreArtista>Kenji Kawakami</AutoreArtista>
         <materialiUtilizzati>Varie, spesso oggetti comuni riadattati in modo innovativo e paradossale</materialiUtilizzati>
         <significatoSimbolico>Satira e critica dell&apos;eccessiva innovazione tecnologica e consumismo; celebra l&apos;ingegno umano e il pensiero fuori dagli schemi</significatoSimbolico>
         <tecnicaUtilizzata>Ideazione e creazione di oggetti ingegnosi ma inutilizzabili nella pratica quotidiana</tecnicaUtilizzata>
-        <Autore:Artista>Kenji Kawakami</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -775,10 +775,10 @@
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Daruma">
         <rdf:type rdf:resource="http://www.example.org/giappone#Tradizioni"/>
         <natoNel rdf:resource="http://www.example.org/giappone#Periodo_Edo"/>
+        <AutoreArtista>monaci buddisti</AutoreArtista>
         <materialiUtilizzati>Terracotta, pigmenti per pittura, talvolta oro o argento per decorazioni</materialiUtilizzati>
         <significatoSimbolico>Simboleggia perseveranza, determinazione e buona fortuna; spesso associato al raggiungimento di obiettivi e desideri</significatoSimbolico>
         <tecnicaUtilizzata>Scultura o dipinto di una figura rotonda con un volto stilizzato, solitamente realizzata in terracotta</tecnicaUtilizzata>
-        <Autore:Artista>monaci buddisti</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -817,10 +817,10 @@
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#FestivalDiTanabata">
         <rdf:type rdf:resource="http://www.example.org/giappone#Festività"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
+        <AutoreArtista>leggende cinesi</AutoreArtista>
         <materialiUtilizzati>Bamboo, carta colorata, decorazioni di carta (origami), lanterne, e altri ornamenti</materialiUtilizzati>
         <significatoSimbolico>Celebra l&apos;incontro annuale della principessa stellare Orihime (Vega) e del bovino celeste Hikoboshi (Altair) sul ponte della Via Lattea, permettendo a persone di esprimere desideri e speranze</significatoSimbolico>
         <tecnicaUtilizzata>Decorazione di bamboo con carta colorata (tanzaku) su cui sono scritte preghiere e desideri</tecnicaUtilizzata>
-        <Autore:Artista>leggende cinesi</Autore:Artista>
         <haProprietà>valore della proprietà</haProprietà>
     </owl:NamedIndividual>
     
@@ -831,10 +831,10 @@
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Festival_Obon">
         <rdf:type rdf:resource="http://www.example.org/giappone#Festività"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Nara"/>
+        <AutoreArtista>influenze buddiste</AutoreArtista>
         <materialiUtilizzati>Lanterne di carta (tōrō nagashi), incenso, fiori, altari domestici (butsudan), cibo offerto (come frutta e dolci tradizionali)</materialiUtilizzati>
         <significatoSimbolico>Onora gli spiriti degli antenati, esprimendo gratitudine, rispetto e amore; occasione per riunire la famiglia</significatoSimbolico>
         <tecnicaUtilizzata>Celebrazioni comprendono danze Bon Odori, visite ai cimiteri, accensione di lanterne, e offerte agli spiriti degli antenati</tecnicaUtilizzata>
-        <Autore:Artista>influenze buddiste</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -1173,10 +1173,10 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiVisive"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
         <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
+        <AutoreArtista>monaci buddisti</AutoreArtista>
         <materialiUtilizzati>Fiori, rami, foglie, erbe, vasi e altri contenitori specifici per Ikebana</materialiUtilizzati>
         <significatoSimbolico>Rappresenta l&apos;armonia tra uomo e natura, la bellezza effimera della vita e l&apos;importanza dello spazio vuoto (ma)</significatoSimbolico>
         <tecnicaUtilizzata>Arte della disposizione dei fiori che enfatizza l&apos;armonia, l&apos;equilibrio e l&apos;estetica minimalista</tecnicaUtilizzata>
-        <Autore:Artista>monaci buddisti</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -1649,10 +1649,10 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Mizuhiki">
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiVisive"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Asuka"/>
+        <AutoreArtista>Anonimo</AutoreArtista>
         <materialiUtilizzati>Corde di carta giapponese (solitamente carta washi), spesso colorata o metallica</materialiUtilizzati>
         <significatoSimbolico>Utilizzato per esprimere auguri di buona fortuna, felicità, e prosperità. Comunemente usato in occasioni cerimoniali come matrimoni, compleanni e festività.</significatoSimbolico>
         <tecnicaUtilizzata>Intrecci e nodi decorativi realizzati con corde di carta giapponese</tecnicaUtilizzata>
-        <Autore:Artista>Anonimo</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -1847,10 +1847,10 @@ Stile Hiroshima: gli ingredienti vengono stratificati, con la pastella cotta sep
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Origami">
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiVisive"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
+        <AutoreArtista>Anonimo</AutoreArtista>
         <materialiUtilizzati>Carta (tradizionalmente carta washi, ma anche carta comune o specializzata per origami)</materialiUtilizzati>
         <significatoSimbolico>Spesso rappresenta simboli di pace, buona fortuna, e auguri di lunga vita. La gru di carta è particolarmente significativa come simbolo di pace.</significatoSimbolico>
         <tecnicaUtilizzata>Piegatura della carta senza l&apos;uso di forbici o colla</tecnicaUtilizzata>
-        <Autore:Artista>Anonimo</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -2224,10 +2224,10 @@ Il shabu-shabu è un’esperienza culinaria interattiva e conviviale, perfetta p
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sumi-e">
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiVisive"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
+        <AutoreArtista>Sesshū Tōyō e Josetsu</AutoreArtista>
         <materialiUtilizzati>Carta washi, seta, pennelli di bambù, inchiostro sumi (inchiostro nero) e pietra per inchiostro (suzuri)</materialiUtilizzati>
         <significatoSimbolico>Spesso rappresenta la natura, paesaggi, fiori, animali e scene religiose, con un&apos;enfasi sulla semplicità e la spiritualità. Influenze dal buddhismo Zen.</significatoSimbolico>
         <tecnicaUtilizzata>Pittura ad inchiostro su carta o seta</tecnicaUtilizzata>
-        <Autore:Artista>Sesshū Tōyō e Josetsu</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -2332,10 +2332,10 @@ Il sushi è noto per la sua presentazione elegante e il suo equilibrio di sapori
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiPerformative"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Edo"/>
         <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
+        <AutoreArtista>Izumo no Okuni</AutoreArtista>
         <materialiUtilizzati>Costumi colorati e dettagliati, trucco elaborato (kumadori), parrucche, scenografie mobili e strumenti musicali tradizionali come lo shamisen e i tamburi taiko.</materialiUtilizzati>
         <significatoSimbolico>Rappresenta storie di samurai, storie d&apos;amore, eventi storici e leggende popolari. Spesso include temi di moralità, eroismo e tragedia.</significatoSimbolico>
         <tecnicaUtilizzata>Teatro drammatico con recitazione stilizzata, danza, musica e acrobazie.</tecnicaUtilizzata>
-        <Autore:Artista>Izumo no Okuni</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -2347,10 +2347,10 @@ Il sushi è noto per la sua presentazione elegante e il suo equilibrio di sapori
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Muromachi"/>
         <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
         <haOrigineA rdf:resource="http://www.example.org/giappone#Nara"/>
+        <AutoreArtista>Kan&apos;ami, Zeami.</AutoreArtista>
         <materialiUtilizzati>Costumi elaborati (spesso di seta), maschere dipinte a mano, e strumenti musicali tradizionali come il flauto Nōkan e tamburi taiko.</materialiUtilizzati>
         <significatoSimbolico>Spesso rappresenta temi come il destino, la spiritualità, le emozioni umane e storie epiche. Fortemente influenzato dal buddhismo Zen.</significatoSimbolico>
         <tecnicaUtilizzata>Teatro drammatico con musica, danza e recitazione.</tecnicaUtilizzata>
-        <Autore:Artista>Kan&apos;ami, Zeami.</Autore:Artista>
     </owl:NamedIndividual>
     
 
@@ -2592,10 +2592,10 @@ Gli udon possono essere gustati in ogni stagione, con vari condimenti che cambia
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Edo"/>
         <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
         <haOrigineA rdf:resource="http://www.example.org/giappone#Tokyo"/>
+        <AutoreArtista>Hiroshige, Hokusai, Utamaro</AutoreArtista>
         <materialiUtilizzati>Carta washi, inchiostro e pigmenti naturali.</materialiUtilizzati>
         <significatoSimbolico>Rappresentazione della &quot;vita fluttuante&quot; dell&apos;epoca, con temi come belle donne, attori teatrali, paesaggi, ecc.</significatoSimbolico>
         <tecnicaUtilizzata>Stampa su legno</tecnicaUtilizzata>
-        <Autore:Artista>Hiroshige, Hokusai, Utamaro</Autore:Artista>
     </owl:NamedIndividual>
     
 

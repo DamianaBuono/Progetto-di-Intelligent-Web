@@ -23,11 +23,11 @@ const Arti = () => {
           {
             ?arti rdf:type giappone:ArtiVisive .
             ?arti giappone:tecnicaUtilizzata ?tu .
-    		?arti giappone:materialiUtilizzati ?mu .
-   			?arti giappone:AutoreArtista ?artisti .
-    		?arti giappone:significatoSimbolico ?ss .
+            ?arti giappone:materialiUtilizzati ?mu .
+            ?arti giappone:AutoreArtista ?artisti .
+            ?arti giappone:significatoSimbolico ?ss .
             BIND("Arti Visive" AS ?VoP)
-  		  }
+          }
         }
       `;
 
@@ -49,7 +49,7 @@ const Arti = () => {
   }, []);
 
   if (loading) {
-    return <p>Caricamento della storia...</p>;
+    return <p>Caricamento delle arti...</p>;
   }
 
   return (
@@ -59,18 +59,20 @@ const Arti = () => {
       {arti.length > 0 ? (
         <div className="row">
           {arti.map((item) => (
-            <div className="col-md-4 mb-4" key={item.storia.value}>
+            <div className="col-md-4 mb-4" key={item.arti.value}>
               <div className="card h-100">
                 <img
-                  src={`/images/periodo/${item.storia.value.split('#')[1]}.jpg`} // Assicurati che l'immagine esista
+                  src={`/images/arti/${item.arti.value.split('#')[1]}.jpg`} 
                   className="card-img-top"
-                  alt={item.periodoS.value}
+                  alt={item.arti.value.split('#')[1]}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{item.storia.value.split('#')[1] }</h5>
-                  <p className="card-text">Periodo Storico: {item.periodoS.value }</p>
-                  <p className="card-text">Anno di inizio: {item.valueI.value }</p>
-                  <p className="card-text">Anno di fine: {item.valueF.value }</p>
+                  <h5 className="card-title">{item.arti.value.split('#')[1]}</h5>
+                  <p className="card-text">Tipologia di Arte: {item.VoP?.value || 'N/A'}</p>
+                  <p className="card-text">Tecnica utilizzata: {item.tu?.value || 'N/A'}</p>
+                  <p className="card-text">Materiali utilizzati: {item.mu?.value || 'N/A'}</p>
+                  <p className="card-text">Significato Simbolico: {item.ss?.value || 'N/A'}</p>
+                  <p className="card-text">Artisti: {item.artisti?.value || 'N/A'}</p>
                 </div>
               </div>
             </div>

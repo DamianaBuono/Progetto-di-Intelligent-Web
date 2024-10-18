@@ -49,27 +49,6 @@
     
 
 
-    <!-- http://www.example.org/giappone#haCittà -->
-
-    <owl:ObjectProperty rdf:about="http://www.example.org/giappone#haCittà">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.example.org/giappone#Regione"/>
-        <rdfs:range rdf:resource="http://www.example.org/giappone#Città"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.example.org/giappone#haLuogoDiCulto -->
-
-    <owl:ObjectProperty rdf:about="http://www.example.org/giappone#haLuogoDiCulto">
-        <rdfs:domain rdf:resource="http://www.example.org/giappone#Città"/>
-        <rdfs:range rdf:resource="http://www.example.org/giappone#TempliESantuari"/>
-        <owl:propertyDisjointWith rdf:resource="http://www.example.org/giappone#haParco"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.example.org/giappone#haOrigine -->
 
     <owl:ObjectProperty rdf:about="http://www.example.org/giappone#haOrigine">
@@ -85,16 +64,6 @@
     <owl:ObjectProperty rdf:about="http://www.example.org/giappone#haOrigineA">
         <rdfs:domain rdf:resource="http://www.example.org/giappone#Cultura"/>
         <rdfs:range rdf:resource="http://www.example.org/giappone#Città"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.example.org/giappone#haParco -->
-
-    <owl:ObjectProperty rdf:about="http://www.example.org/giappone#haParco">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.example.org/giappone#Regione"/>
-        <rdfs:range rdf:resource="http://www.example.org/giappone#ParchiNazionali"/>
     </owl:ObjectProperty>
     
 
@@ -561,6 +530,15 @@
     
 
 
+    <!-- http://www.example.org/giappone#Akiu_Onsen -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Akiu_Onsen">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Terme"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.example.org/giappone#Akushu_Restaurant -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Akushu_Restaurant">
@@ -585,6 +563,15 @@
         <rdf:type rdf:resource="http://www.example.org/giappone#Ristoranti"/>
         <haPiattoTipico rdf:resource="http://www.example.org/giappone#Anago"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Hatsukaichi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Aoba_Castle_Ruins -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Aoba_Castle_Ruins">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniStoriche"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
     </owl:NamedIndividual>
     
 
@@ -661,6 +648,24 @@
     
 
 
+    <!-- http://www.example.org/giappone#Bar_Oscar -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Bar_Oscar">
+        <rdf:type rdf:resource="http://www.example.org/giappone#CocktailBar"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Bar_Plaza -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Bar_Plaza">
+        <rdf:type rdf:resource="http://www.example.org/giappone#CocktailBar"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Takasaki"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.example.org/giappone#Bar_Rye -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Bar_Rye">
@@ -700,6 +705,16 @@
     
 
 
+    <!-- http://www.example.org/giappone#Bunrai_Ramen -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Bunrai_Ramen">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Ristoranti"/>
+        <haPiattoTipico rdf:resource="http://www.example.org/giappone#Ramen"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Takasaki"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.example.org/giappone#Byodoin -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Byodoin">
@@ -723,7 +738,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Chiba">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Myoken_Hongu"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kanto"/>
     </owl:NamedIndividual>
     
@@ -755,8 +769,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Chubu">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Kanazawa"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Fuji_Hakone"/>
     </owl:NamedIndividual>
     
 
@@ -765,7 +777,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Chugoku">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Hiroshima"/>
     </owl:NamedIndividual>
     
 
@@ -779,6 +790,15 @@
         <materialiUtilizzati>Terracotta, pigmenti per pittura, talvolta oro o argento per decorazioni</materialiUtilizzati>
         <significatoSimbolico>Simboleggia perseveranza, determinazione e buona fortuna; spesso associato al raggiungimento di obiettivi e desideri</significatoSimbolico>
         <tecnicaUtilizzata>Scultura o dipinto di una figura rotonda con un volto stilizzato, solitamente realizzata in terracotta</tecnicaUtilizzata>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Daruma-ji_Temple -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Daruma-ji_Temple">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniStoriche"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Takasaki"/>
     </owl:NamedIndividual>
     
 
@@ -817,6 +837,8 @@
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#FestivalDiTanabata">
         <rdf:type rdf:resource="http://www.example.org/giappone#Festività"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Hiratsuka"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Sendai"/>
         <AutoreArtista>leggende cinesi</AutoreArtista>
         <materialiUtilizzati>Bamboo, carta colorata, decorazioni di carta (origami), lanterne, e altri ornamenti</materialiUtilizzati>
         <significatoSimbolico>Celebra l&apos;incontro annuale della principessa stellare Orihime (Vega) e del bovino celeste Hikoboshi (Altair) sul ponte della Via Lattea, permettendo a persone di esprimere desideri e speranze</significatoSimbolico>
@@ -862,7 +884,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Fukuoka">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Dazaifu_Tenmangu"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kyushu"/>
     </owl:NamedIndividual>
     
@@ -881,7 +902,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Fukushima">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Aizu_Sazaedo"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Tohoku"/>
     </owl:NamedIndividual>
     
@@ -983,6 +1003,25 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
     
 
 
+    <!-- http://www.example.org/giappone#Gyutan -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Gyutan">
+        <rdf:type rdf:resource="http://www.example.org/giappone#PiattiTipici"/>
+        <descrizionePiatto>Specialità di lingua di manzo alla griglia</descrizionePiatto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Gyutan_Date_no_Gyutan -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Gyutan_Date_no_Gyutan">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Ristoranti"/>
+        <haPiattoTipico rdf:resource="http://www.example.org/giappone#Gyutan"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.example.org/giappone#Hachigata_Castle -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hachigata_Castle">
@@ -996,7 +1035,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hakone">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Hakone-jinja"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Sapporo"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kanto"/>
     </owl:NamedIndividual>
@@ -1028,6 +1066,8 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hanami">
         <rdf:type rdf:resource="http://www.example.org/giappone#Festività"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Nara"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Tokyo"/>
         <materialiUtilizzati>Coperte da picnic, cibo e bevande per condividere con amici e familiari, fotocamere per catturare i momenti, e, naturalmente, fiori di ciliegio in fiore.</materialiUtilizzati>
         <significatoSimbolico>Simboleggia la bellezza transitoria della vita e la natura effimera del tempo, oltre a rappresentare l&apos;inizio della primavera e il rinnovamento della natura.</significatoSimbolico>
         <tecnicaUtilizzata>L&apos;attività principale è quella di fare picnic o semplicemente sedersi sotto i fiori di ciliegio in fiore, godendo della loro bellezza e della compagnia di amici e familiari.</tecnicaUtilizzata>
@@ -1039,7 +1079,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hatsukaichi">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Itsukushima"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Chugoku"/>
     </owl:NamedIndividual>
     
@@ -1070,6 +1109,43 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
         <rdf:type rdf:resource="http://www.example.org/giappone#TempliESantuari"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Tokyo"/>
         <tipoLuogoDiCulto>Santuario</tipoLuogoDiCulto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Hiratsuka -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hiratsuka">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
+        <nellaRegione rdf:resource="http://www.example.org/giappone#Kanto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Hiratsuka_Hachimangu -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hiratsuka_Hachimangu">
+        <rdf:type rdf:resource="http://www.example.org/giappone#TempliESantuari"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Hiratsuka"/>
+        <tipoLuogoDiCulto>Santuario</tipoLuogoDiCulto>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Hiratsuka_Hachimangu_Shrine -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hiratsuka_Hachimangu_Shrine">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniStoriche"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Hiratsuka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Hiratsuka_Museum_of_Art -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hiratsuka_Museum_of_Art">
+        <rdf:type rdf:resource="http://www.example.org/giappone#MuseiArte"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Hiratsuka"/>
     </owl:NamedIndividual>
     
 
@@ -1123,7 +1199,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Hokkaido">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Sapporo"/>
     </owl:NamedIndividual>
     
 
@@ -1163,6 +1238,14 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
         <rdf:type rdf:resource="http://www.example.org/giappone#Ristoranti"/>
         <haPiattoTipico rdf:resource="http://www.example.org/giappone#Ramen"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Hiroshima"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Ikaho_Onsen -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Ikaho_Onsen">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Terme"/>
     </owl:NamedIndividual>
     
 
@@ -1254,8 +1337,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kamakura">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Kotoku-in"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Tsurugaoka_Hachiman"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kanto"/>
     </owl:NamedIndividual>
     
@@ -1284,11 +1365,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kansai">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Kobe"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Kyoto"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Nara"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Osaka"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Toyooka"/>
     </owl:NamedIndividual>
     
 
@@ -1297,13 +1373,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kanto">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Chiba"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Kamakura"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Saitama"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Tokyo"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Fuji_Hakone"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Nikko"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Showa_Kinen"/>
     </owl:NamedIndividual>
     
 
@@ -1359,6 +1428,7 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kimono">
         <rdf:type rdf:resource="http://www.example.org/giappone#Tradizioni"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
         <natoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
         <materialiUtilizzati>Sete pregiate, cotone, o altri tessuti tradizionali, oltre a decorazioni come ricami, stampe, o tessuti pregiati come il broccato.</materialiUtilizzati>
         <significatoSimbolico>Simboleggia la cultura e la tradizione giapponese, oltre a essere indossato in occasioni speciali come matrimoni, cerimonie religiose e festival.</significatoSimbolico>
@@ -1382,6 +1452,16 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kinosaki_Onsen">
         <rdf:type rdf:resource="http://www.example.org/giappone#Terme"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Toyooka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Kisuke -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kisuke">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Ristoranti"/>
+        <haPiattoTipico rdf:resource="http://www.example.org/giappone#Sushi"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
     </owl:NamedIndividual>
     
 
@@ -1410,7 +1490,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kobe">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Ikuta"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kansai"/>
     </owl:NamedIndividual>
     
@@ -1477,16 +1556,13 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kyoto">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Byodoin"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Heian_Jingu"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Kenninji"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Kinkakuji"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Kitano_Tenmangu"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Kiyomizudera"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Sanjusangendo"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Sensoji"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Yasaka"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Festival_Obon"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Hanami"/>
         <haOrigine rdf:resource="http://www.example.org/giappone#Ikebana"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Kimono"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Matsuri"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Sumi-e"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Te_Cerimoniale"/>
         <haOrigine rdf:resource="http://www.example.org/giappone#Teatro_Kabuki"/>
         <haOrigine rdf:resource="http://www.example.org/giappone#Teatro_No"/>
         <haOrigine rdf:resource="http://www.example.org/giappone#Ukiyo-e"/>
@@ -1517,8 +1593,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Kyushu">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Fukuoka"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Aso_Kuju"/>
     </owl:NamedIndividual>
     
 
@@ -1576,6 +1650,8 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Matsuri">
         <rdf:type rdf:resource="http://www.example.org/giappone#Festività"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Nara"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Tokyo"/>
         <tecnicaUtilizzata>termine generico che si riferisce alle festività tradizionali giapponesi, spesso connesse a cerimonie religiose shintoiste o buddiste. Questi festival possono includere parate, danze, giochi, bancarelle di cibo e vari rituali per onorare gli dei e gli spiriti.</tecnicaUtilizzata>
     </owl:NamedIndividual>
     
@@ -1676,6 +1752,15 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
     
 
 
+    <!-- http://www.example.org/giappone#Mount_Kannonyama -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Mount_Kannonyama">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniStoriche"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Takasaki"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.example.org/giappone#Museo_Nazionale_della_Scienza_e_della_Natura -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Museo_Nazionale_della_Scienza_e_della_Natura">
@@ -1735,9 +1820,6 @@ Questo piatto è noto per essere un pasto veloce e nutriente, spesso servito con
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Nara">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Kobe"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Todaiji"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Toshodaiji"/>
         <haOrigine rdf:resource="http://www.example.org/giappone#Teatro_No"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kansai"/>
     </owl:NamedIndividual>
@@ -1859,7 +1941,7 @@ Stile Hiroshima: gli ingredienti vengono stratificati, con la pastella cotta sep
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Osaka">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Sumiyoshi"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Rakugo"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kansai"/>
     </owl:NamedIndividual>
     
@@ -1879,6 +1961,16 @@ Stile Hiroshima: gli ingredienti vengono stratificati, con la pastella cotta sep
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Osaka_Science_Museum">
         <rdf:type rdf:resource="http://www.example.org/giappone#MuseiScienza"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Osaka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Osaki_Hachimangu -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Osaki_Hachimangu">
+        <rdf:type rdf:resource="http://www.example.org/giappone#TempliESantuari"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
+        <tipoLuogoDiCulto>Santuario</tipoLuogoDiCulto>
     </owl:NamedIndividual>
     
 
@@ -2016,6 +2108,8 @@ Stile Hiroshima: gli ingredienti vengono stratificati, con la pastella cotta sep
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Rakugo">
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiPerformative"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Edo"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Osaka"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Tokyo"/>
         <tecnicaUtilizzata>Una forma di narrazione comica giapponese dove un solo narratore intrattiene il pubblico con storie divertenti.</tecnicaUtilizzata>
     </owl:NamedIndividual>
     
@@ -2068,6 +2162,16 @@ I condimenti comuni includono fette di maiale arrosto (chashu), uova marinate, a
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Saitama">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kanto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Sakae_Sushi -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sakae_Sushi">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Ristoranti"/>
+        <haPiattoTipico rdf:resource="http://www.example.org/giappone#Sushi"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Hiratsuka"/>
     </owl:NamedIndividual>
     
 
@@ -2128,6 +2232,43 @@ I condimenti comuni includono fette di maiale arrosto (chashu), uova marinate, a
     
 
 
+    <!-- http://www.example.org/giappone#Sendai -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sendai">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#FestivalDiTanabata"/>
+        <nellaRegione rdf:resource="http://www.example.org/giappone#Tohoku"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Sendai_City_Museum -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sendai_City_Museum">
+        <rdf:type rdf:resource="http://www.example.org/giappone#MuseiArte"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Sendai_Mediatheque -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sendai_Mediatheque">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniModerne"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Sendai_Science_Museum -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sendai_Science_Museum">
+        <rdf:type rdf:resource="http://www.example.org/giappone#MuseiScienza"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.example.org/giappone#Sensoji -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sensoji">
@@ -2175,8 +2316,6 @@ Il shabu-shabu è un’esperienza culinaria interattiva e conviviale, perfetta p
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Shikoku">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Matsuyama"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Setonaikai"/>
     </owl:NamedIndividual>
     
 
@@ -2186,6 +2325,25 @@ Il shabu-shabu è un’esperienza culinaria interattiva e conviviale, perfetta p
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Shinjuku_Gyoen_National_Garden">
         <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniStoriche"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Tokyo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Shonan_Bellmare_Hiratsuka_Stadium -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Shonan_Bellmare_Hiratsuka_Stadium">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniModerne"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Hiratsuka"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Shorinzan_Darumaji_Temple -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Shorinzan_Darumaji_Temple">
+        <rdf:type rdf:resource="http://www.example.org/giappone#TempliESantuari"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Takasaki"/>
+        <tipoLuogoDiCulto>Tempio</tipoLuogoDiCulto>
     </owl:NamedIndividual>
     
 
@@ -2224,6 +2382,7 @@ Il shabu-shabu è un’esperienza culinaria interattiva e conviviale, perfetta p
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Sumi-e">
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiVisive"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
         <AutoreArtista>Sesshū Tōyō e Josetsu</AutoreArtista>
         <materialiUtilizzati>Carta washi, seta, pennelli di bambù, inchiostro sumi (inchiostro nero) e pietra per inchiostro (suzuri)</materialiUtilizzati>
         <significatoSimbolico>Spesso rappresenta la natura, paesaggi, fiori, animali e scene religiose, con un&apos;enfasi sulla semplicità e la spiritualità. Influenze dal buddhismo Zen.</significatoSimbolico>
@@ -2286,6 +2445,34 @@ Il sushi è noto per la sua presentazione elegante e il suo equilibrio di sapori
     
 
 
+    <!-- http://www.example.org/giappone#Takasaki -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Takasaki">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Daruma"/>
+        <nellaRegione rdf:resource="http://www.example.org/giappone#Kanto"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Takasaki_City_Hall_Observation_Deck -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Takasaki_City_Hall_Observation_Deck">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniModerne"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Takasaki"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Takasaki_Tower_Museum_of_Art -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Takasaki_Tower_Museum_of_Art">
+        <rdf:type rdf:resource="http://www.example.org/giappone#MuseiArte"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Takasaki"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.example.org/giappone#Takedaya -->
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Takedaya">
@@ -2318,6 +2505,7 @@ Il sushi è noto per la sua presentazione elegante e il suo equilibrio di sapori
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Te_Cerimoniale">
         <rdf:type rdf:resource="http://www.example.org/giappone#Tradizioni"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
         <natoNel rdf:resource="http://www.example.org/giappone#Periodo_Heian"/>
         <materialiUtilizzati>Tazze da tè di ceramica o lacca, ciotole per il tè matcha, utensili per la preparazione del tè, fiori freschi o altri elementi decorativi, spesso presentati in un tokonoma (alcova).</materialiUtilizzati>
         <significatoSimbolico>Simboleggia l&apos;armonia, la purezza e la tranquillità, e promuove il rispetto per gli altri, per se stessi e per la natura.</significatoSimbolico>
@@ -2332,6 +2520,7 @@ Il sushi è noto per la sua presentazione elegante e il suo equilibrio di sapori
         <rdf:type rdf:resource="http://www.example.org/giappone#ArtiPerformative"/>
         <creatoNel rdf:resource="http://www.example.org/giappone#Periodo_Edo"/>
         <haOrigineA rdf:resource="http://www.example.org/giappone#Kyoto"/>
+        <haOrigineA rdf:resource="http://www.example.org/giappone#Tokyo"/>
         <AutoreArtista>Izumo no Okuni</AutoreArtista>
         <materialiUtilizzati>Costumi colorati e dettagliati, trucco elaborato (kumadori), parrucche, scenografie mobili e strumenti musicali tradizionali come lo shamisen e i tamburi taiko.</materialiUtilizzati>
         <significatoSimbolico>Rappresenta storie di samurai, storie d&apos;amore, eventi storici e leggende popolari. Spesso include temi di moralità, eroismo e tragedia.</significatoSimbolico>
@@ -2462,10 +2651,6 @@ Il teppanyaki è diventato popolare non solo in Giappone ma anche in tutto il mo
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Tohoku">
         <rdf:type rdf:resource="http://www.example.org/giappone#Regione"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Fukushima"/>
-        <haCittà rdf:resource="http://www.example.org/giappone#Semboku"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Nikko"/>
-        <haParco rdf:resource="http://www.example.org/giappone#Towada-Hachimantai"/>
     </owl:NamedIndividual>
     
 
@@ -2474,11 +2659,9 @@ Il teppanyaki è diventato popolare non solo in Giappone ma anche in tutto il mo
 
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Tokyo">
         <rdf:type rdf:resource="http://www.example.org/giappone#Città"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Akasaka_Hikawa"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Hie-jinja"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Kanda"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Nezu"/>
-        <haLuogoDiCulto rdf:resource="http://www.example.org/giappone#Oji"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Hanami"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Matsuri"/>
+        <haOrigine rdf:resource="http://www.example.org/giappone#Rakugo"/>
         <haOrigine rdf:resource="http://www.example.org/giappone#Ukiyo-e"/>
         <nellaRegione rdf:resource="http://www.example.org/giappone#Kanto"/>
     </owl:NamedIndividual>
@@ -2511,6 +2694,15 @@ Il teppanyaki è diventato popolare non solo in Giappone ma anche in tutto il mo
         <rdf:type rdf:resource="http://www.example.org/giappone#Ristoranti"/>
         <haPiattoTipico rdf:resource="http://www.example.org/giappone#Yakitori"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Nara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Torikizoku_Hiratsuka -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Torikizoku_Hiratsuka">
+        <rdf:type rdf:resource="http://www.example.org/giappone#Izakaya"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Hiratsuka"/>
     </owl:NamedIndividual>
     
 
@@ -2681,6 +2873,15 @@ Lo yakitori è spesso servito come street food o in izakaya (pub giapponesi), ac
     <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Yuwaku_Onsen">
         <rdf:type rdf:resource="http://www.example.org/giappone#Terme"/>
         <nellaCittà rdf:resource="http://www.example.org/giappone#Kanazawa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/giappone#Zuihoden_Mausoleum -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/giappone#Zuihoden_Mausoleum">
+        <rdf:type rdf:resource="http://www.example.org/giappone#AttrazioniStoriche"/>
+        <nellaCittà rdf:resource="http://www.example.org/giappone#Sendai"/>
     </owl:NamedIndividual>
     
 

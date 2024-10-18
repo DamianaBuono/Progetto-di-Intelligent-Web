@@ -58,7 +58,7 @@ const Arti = () => {
   }
 
   return (
-    <div className="artboard">
+    <div className="art-page artboard">  {/* Aggiungi la classe art-page qui */}
       <h2>Cultura delle Arti Giapponesi</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {arti.length > 0 ? (

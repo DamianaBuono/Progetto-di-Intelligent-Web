@@ -1,118 +1,103 @@
 /* src/components/Arti.css */
 
 /* General styles */
-.artboard {
-    margin-top: 2rem;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  p {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Card styles */
-  .card {
-    perspective: 150rem;
-    position: relative;
-    height: 20rem;
-    margin: 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-    transition: all 0.8s ease;
-  }
-  
-  .card__side {
-    height: 20rem;
-    transition: all 0.8s ease;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    backface-visibility: hidden;
-  }
-  
-  .card__side--front {
-    background-color: #fff;
-  }
-  
-  .card__side--back {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    transform: rotateY(180deg);
-  }
-  
-  .card:hover .card__side--front {
-    transform: rotateY(-180deg);
-  }
-  
-  .card:hover .card__side--back {
-    transform: rotateY(0);
-  }
-  
-  .card__theme {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .card__theme-box {
-    text-align: center;
-  }
-  
-  .card__title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: rgba(139, 0, 0, 0.5);
-  }
-  
-  .card__cover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4rem;
-  }
-  
-  .card__heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .card__details {
-    padding: 1rem;
-  }
-  
-  .card__details ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .card__details li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .card__details li:last-child {
-    margin-bottom: 0;
-  }
-  
-  /* Error message */
-  p[style="color: red;"] {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 2rem;
-  }
-  
-  /* Loading message */
-  p[style="color: green;"] {
-    text-align: center;
-    font-weight: bold;
-    margin-top: 2rem;
-  }
-  
+.art-page .artboard {   /* Isola gli stili solo per la pagina Arti */
+  margin-top: 2rem;
+}
+
+.art-page h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.art-page p {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Card styles */
+.art-page .card {
+  perspective: 150rem;
+  position: relative;
+  height: 20rem;
+  margin: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all 0.8s ease;
+}
+
+.art-page .card__side {
+  height: 20rem;
+  transition: all 0.8s ease;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.art-page .card__side--front {
+  background-color: #fff;
+}
+
+.art-page .card__side--back {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  transform: rotateY(180deg);
+}
+
+.art-page .card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.art-page .card:hover .card__side--back {
+  transform: rotateY(0);
+}
+
+.art-page .card__theme {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-page .card__theme-box {
+  text-align: center;
+}
+
+.art-page .card__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: rgba(139, 0, 0, 0.5); /* Colore solo per Arti */
+}
+
+.art-page .card__cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+}
+
+.art-page .card__heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.art-page .card__details {
+  padding: 1rem;
+}
+
+.art-page .card__details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.art-page .card__details li {
+  margin-bottom: 0.5rem;
+}
+
+.art-page .card__details li:last-child {
+  margin-bottom: 0;
+}

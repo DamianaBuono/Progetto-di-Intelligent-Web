@@ -1,68 +1,35 @@
 /* src/App.css */
 
-.App {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-
-body {
+/* Generale */
+.app-page {
+  /* Classe principale per tutta l'app */
+  padding: 0;
   margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
-
-h1 {
-  color: #ff8383;
+/* Footer */
+.footer {
+  background-color: #8b0000; /* Colore del footer */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  position: relative;
 }
 
-h2 {
-  color: #ff8383;
+.footer .contact-info {
+  margin-bottom: 10px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  background: #ecf0f1;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.navbar {
-  background: #ffc394;
-  color: white;
-  padding: 10px;
-}
-
-.navbar h1 {
-  display: inline;
-}
-
-.navbar ul {
-  float: right;
-}
-
-.navbar li {
-  display: inline;
-  margin-left: 20px;
-}
-
-.navbar a {
-  color: white;
+.footer .social-icons a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 24px;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
+.footer .social-icons a:hover {
+  color: #ff8383;
 }
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-

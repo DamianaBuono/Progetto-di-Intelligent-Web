@@ -1,6 +1,6 @@
 // src/components/Gastronomia.js
 import React, { useEffect, useState } from 'react';
-import { fetchQuery } from '../api';
+import { fetchQuery } from '../../api';
 
 const Gastronomia = () => {
   const [gastronomyItems, setGastronomyItems] = useState([]);

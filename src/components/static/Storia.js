@@ -1,6 +1,6 @@
 // src/components/Storia.js
 import React, { useEffect, useState } from 'react';
-import { fetchQuery } from '../api';
+import { fetchQuery } from '../../api';
 
 const Storia = () => {
   const [storia, setStoria] = useState([]);

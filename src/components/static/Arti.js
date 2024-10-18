@@ -1,6 +1,6 @@
 // src/components/Arti.js
 import React, { useEffect, useState } from 'react';
-import { fetchQuery } from '../api';
+import { fetchQuery } from '../../api';
 
 const Arti = () => {
   const [arti, setArti] = useState([]);

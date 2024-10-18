@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
-import './Card.css';
+import '../style/Card.css';
 
 const Card = () => {
   return (

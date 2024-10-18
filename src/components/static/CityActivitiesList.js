@@ -1,7 +1,7 @@
 // src/components/CityActivitiesList.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchQuery } from '../api';
+import { fetchQuery } from '../../api';
 
 const CityActivitiesList = () => {
   const { cityName } = useParams(); // Ottieni il nome della città dall'URL

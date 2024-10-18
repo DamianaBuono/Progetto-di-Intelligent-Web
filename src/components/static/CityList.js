@@ -1,7 +1,7 @@
 // src/components/CityList.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchQuery } from '../api';
+import { fetchQuery } from '../../api';
 
 const CityList = () => {
   const [cities, setCities] = useState([]);

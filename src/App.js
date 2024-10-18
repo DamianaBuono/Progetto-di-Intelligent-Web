@@ -1,17 +1,17 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import CityList from './components/CityList';
-import CityActivitiesList from './components/CityActivitiesList';
-import Gastronomia from './components/Gastronomia';
-import Posti from './components/Posti';
-import Storia from './components/Storia';
+import Navbar from './components/static/Navbar';
+import Home from './components/static/Home';
+import CityList from './components/static/CityList';
+import CityActivitiesList from './components/static/CityActivitiesList';
+import Gastronomia from './components/static/Gastronomia';
+import Posti from './components/static/Posti';
+import Storia from './components/static/Storia';
 import Footer from './Footer';
-import Arti from './components/Arti';
-import Tradizioni from './components/Tradizioni';
-import Festivita from './components/Festivita';
+import Arti from './components/static/Arti';
+import Tradizioni from './components/static/Tradizioni';
+import Festivita from './components/static/Festivita';
 
 function App() {
   return (

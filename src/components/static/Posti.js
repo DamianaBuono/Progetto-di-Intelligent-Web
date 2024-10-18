@@ -1,6 +1,6 @@
 // src/components/Posti.js
 import React, { useEffect, useState } from 'react';
-import { fetchQuery } from '../api';
+import { fetchQuery } from '../../api';
 
 const Posti = () => {
   const [places, setPlaces] = useState([]);

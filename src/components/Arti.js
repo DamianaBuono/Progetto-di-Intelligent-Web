@@ -1,6 +1,7 @@
 // src/components/Arti.js
 import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../api';
+import './Arti.css';
 
 const Arti = () => {
   const [arti, setArti] = useState([]);
@@ -12,11 +13,13 @@ const Arti = () => {
       const query = `
         PREFIX giappone: <http://www.example.org/giappone#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        SELECT ?arti ?tu ?mu ?artisti ?ss ?VoP
+
+        SELECT ?arti ?tu ?mu ?artisti ?ss ?VoP (GROUP_CONCAT(?citta; separator=", ") AS ?cittaOrigine)
         WHERE {
           {
             ?arti rdf:type giappone:ArtiPerformative .
             ?arti giappone:tecnicaUtilizzata ?tu .
+            OPTIONAL { ?arti giappone:haOrigineA ?citta . }
             BIND("Arti Performative" AS ?VoP)
           }
           UNION
@@ -26,9 +29,11 @@ const Arti = () => {
             ?arti giappone:materialiUtilizzati ?mu .
             ?arti giappone:AutoreArtista ?artisti .
             ?arti giappone:significatoSimbolico ?ss .
+            OPTIONAL { ?arti giappone:haOrigineA ?citta . }
             BIND("Arti Visive" AS ?VoP)
           }
         }
+        GROUP BY ?arti ?tu ?mu ?artisti ?ss ?VoP
       `;
 
       try {
@@ -53,26 +58,33 @@ const Arti = () => {
   }
 
   return (
-    <div className="container mt-3">
+    <div className="artboard">
       <h2>Cultura delle Arti Giapponesi</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {arti.length > 0 ? (
         <div className="row">
           {arti.map((item) => (
-            <div className="col-md-4 mb-4" key={item.arti.value}>
-              <div className="card h-100">
-                <img
-                  src={`/images/arti/${item.arti.value.split('#')[1]}.jpg`} 
-                  className="card-img-top"
-                  alt={item.arti.value.split('#')[1]}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item.arti.value.split('#')[1]}</h5>
-                  <p className="card-text">Tipologia di Arte: {item.VoP?.value || 'N/A'}</p>
-                  <p className="card-text">Tecnica utilizzata: {item.tu?.value || 'N/A'}</p>
-                  <p className="card-text">Materiali utilizzati: {item.mu?.value || 'N/A'}</p>
-                  <p className="card-text">Significato Simbolico: {item.ss?.value || 'N/A'}</p>
-                  <p className="card-text">Artisti: {item.artisti?.value || 'N/A'}</p>
+            <div className="card" key={item.arti.value}>
+              <div className="card__side card__side--front">
+                <div className="card__theme">
+                  <div className="card__theme-box">
+                    <p className="card__title">{item.arti.value.split('#')[1]}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="card__side card__side--back">
+                <div className="card__cover">
+                  <h4 className="card__heading">{item.arti.value.split('#')[1]}</h4>
+                </div>
+                <div className="card__details">
+                  <ul>
+                    <li>Tipologia di Arte: {item.VoP?.value || 'Nessuna informazione a riguardo'}</li>
+                    <li>Tecnica utilizzata: {item.tu?.value || 'Nessuna informazione a riguardo'}</li>
+                    <li>Materiali utilizzati: {item.mu?.value || 'Nessuna informazione a riguardo'}</li>
+                    <li>Significato Simbolico: {item.ss?.value || 'Nessuna informazione a riguardo'}</li>
+                    <li>Artisti: {item.artisti?.value || 'Nessuna informazione a riguardo'}</li>
+                    <li>Ha origine a: {item.cittaOrigine?.value || 'Non ha una città specifica di origine, ma è praticata in tutto il Giappone'}</li>
+                  </ul>
                 </div>
               </div>
             </div>

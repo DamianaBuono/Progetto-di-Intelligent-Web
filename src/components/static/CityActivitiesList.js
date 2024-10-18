@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchQuery } from '../../api';
+import HeaderCity from './HeaderCity';
 
 const CityActivitiesList = () => {
   const { cityName } = useParams(); // Ottieni il nome della città dall'URL
@@ -146,7 +147,7 @@ const CityActivitiesList = () => {
 
   return (
     <div className="container mt-3">
-      <h2>Attività a {cityName}</h2>
+      <HeaderCity cityName={cityName} /> {/* Passa cityName come props */}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       
       {restaurants.length > 0 && (

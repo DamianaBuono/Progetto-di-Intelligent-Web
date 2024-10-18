@@ -3,6 +3,7 @@ import '../style/Header.css';
 
 const Header = () => {
   return (
+    
     <div className="parallax-wrapper">
       <div className="hero parallax-content">
         <img

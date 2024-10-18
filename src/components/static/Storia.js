@@ -1,6 +1,6 @@
-// src/components/Storia.js
 import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../../api';
+import '../style/CityList.css';
 
 const Storia = () => {
   const [storia, setStoria] = useState([]);
@@ -65,29 +65,41 @@ const Storia = () => {
     return <p>Caricamento della storia...</p>;
   }
 
+  // Ordinare le card in base all'anno di inizio
+  const sortedStoria = storia.sort((a, b) => {
+    return parseInt(a.valueI.value) - parseInt(b.valueI.value); // Converte le stringhe in numeri per il confronto
+  });
+
   return (
     <div className="container mt-3">
       <h2>Storia del Giappone</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {storia.length > 0 ? (
+      {sortedStoria.length > 0 ? (
         <div className="row">
-          {storia.map((item) => (
-            <div className="col-md-4 mb-4" key={item.storia.value}>
-              <div className="card h-100">
-                <img
-                  src={`/images/periodo/${item.storia.value.split('#')[1]}.jpg`} // Assicurati che l'immagine esista
-                  className="card-img-top"
-                  alt={item.periodoS.value}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item.storia.value.split('#')[1] }</h5>
-                  <p className="card-text">Periodo Storico: {item.periodoS.value }</p>
-                  <p className="card-text">Anno di inizio: {item.valueI.value }</p>
-                  <p className="card-text">Anno di fine: {item.valueF.value }</p>
+          {sortedStoria.map((item) => {
+            const periodoName = item.storia.value.split('#')[1]; // definizione di periodoName
+            console.log(`/images/periodo/${periodoName}.jpg`);
+            return (
+              <div className="col s12 m6 l4 mb-4" key={item.storia.value}>
+                <div className="card h-100">
+                  <div className="photo">
+                    <img
+                      src={`/images/periodo/${periodoName}.jpg`} // Assicurati che l'immagine esista
+                      className="card-img-top"
+                      alt={periodoName}
+                    />
+                    <div className="photos">Foto</div>
+                  </div>
+                  <div className="card-body">
+                    <h5 className="txt5">{periodoName}</h5>
+                    <p className="txt2">{item.periodoS.value}</p>
+                    <p className="txt2">Anno di inizio: {item.valueI.value}</p>
+                    <p className="txt2">Anno di fine: {item.valueF.value}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <p>Nessun dato disponibile.</p>

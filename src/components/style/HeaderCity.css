@@ -1,0 +1,78 @@
+/* src/style/HeaderCity.css */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap");
+
+:root {
+  --hero-gap: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lora", serif;
+}
+
+h1 {
+  font-size: calc(0.5rem + 8vmin);
+  font-weight: 600;
+  font-style: italic;
+}
+
+h2 {
+  font-size: calc(0.8rem + 4vmin);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+p {
+  font-size: calc(0.8rem + 1.25vmin);
+  line-height: 1.65;
+}
+
+.parallax-wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .hero__title {
+    color: white;
+    z-index: 2;
+    text-align: center;
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
+
+.main-content {
+  position: relative;
+  margin: 0 auto;
+  padding: var(--hero-gap) 2rem;
+  max-width: 725px;
+  background-color: white;
+
+  > * + * {
+    margin-top: 2rem;
+  }
+}

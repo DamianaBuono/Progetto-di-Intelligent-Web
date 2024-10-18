@@ -1,7 +1,6 @@
 // src/components/Arti.js
 import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../api';
-import './Arti.css';
 
 const Arti = () => {
   const [arti, setArti] = useState([]);
@@ -54,37 +53,41 @@ const Arti = () => {
   }, []);
 
   if (loading) {
-    return <p>Caricamento delle arti...</p>;
+    return <p>Caricamento della storia...</p>;
   }
 
+  const extractCityName = (cityUri) => {
+    // Supponiamo che l'URI sia nel formato http://www.example.org/giappone#Città
+    // Estrai il nome della città dall'URI
+    if (!cityUri) return '';
+    const parts = cityUri.split('#');
+    return parts.length > 1 ? parts[1] : cityUri; // Restituisce solo la parte dopo il #
+  };
+
   return (
-    <div className="art-page artboard">  {/* Aggiungi la classe art-page qui */}
+    <div className="container mt-3">
       <h2>Cultura delle Arti Giapponesi</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {arti.length > 0 ? (
         <div className="row">
           {arti.map((item) => (
-            <div className="card" key={item.arti.value}>
-              <div className="card__side card__side--front">
-                <div className="card__theme">
-                  <div className="card__theme-box">
-                    <p className="card__title">{item.arti.value.split('#')[1]}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="card__side card__side--back">
-                <div className="card__cover">
-                  <h4 className="card__heading">{item.arti.value.split('#')[1]}</h4>
-                </div>
-                <div className="card__details">
-                  <ul>
-                    <li>Tipologia di Arte: {item.VoP?.value || 'Nessuna informazione a riguardo'}</li>
-                    <li>Tecnica utilizzata: {item.tu?.value || 'Nessuna informazione a riguardo'}</li>
-                    <li>Materiali utilizzati: {item.mu?.value || 'Nessuna informazione a riguardo'}</li>
-                    <li>Significato Simbolico: {item.ss?.value || 'Nessuna informazione a riguardo'}</li>
-                    <li>Artisti: {item.artisti?.value || 'Nessuna informazione a riguardo'}</li>
-                    <li>Ha origine a: {item.cittaOrigine?.value || 'Non ha una città specifica di origine, ma è praticata in tutto il Giappone'}</li>
-                  </ul>
+            <div className="col-md-4 mb-4" key={item.arti?.value || item.arti.value}>
+              <div className="card h-100">
+                <img
+                  src={`/images/arti/${item.arti?.value.split('#')[1]}.jpg`} 
+                  className="card-img-top"
+                  alt={item.arti?.value || 'Immagine non disponibile'}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{item.arti.value.split('#')[1]}</h5>
+                  <p className="card-text">Tipologia di Arte: {item.VoP?.value || 'Nessuna informazione a riguardo'}</p>
+                  <p className="card-text">Tecnica utilizzata: {item.tu?.value || 'Nessuna informazione a riguardo'}</p>
+                  <p className="card-text">Materiali utilizzati: {item.mu?.value || 'Nessuna informazione a riguardo'}</p>
+                  <p className="card-text">Significato Simbolico: {item.ss?.value || 'Nessuna informazione a riguardo'}</p>
+                  <p className="card-text">Artisti: {item.artisti?.value || 'Nessuna informazione a riguardo'}</p>
+                  <p className="card-text">
+                    Ha origine a: {item.cittaOrigine ? item.cittaOrigine.value.split(', ').map(extractCityName).join(', ') : 'Non ha una città specifica di origine, ma è praticata in tutto il Giappone'}
+                  </p>
                 </div>
               </div>
             </div>

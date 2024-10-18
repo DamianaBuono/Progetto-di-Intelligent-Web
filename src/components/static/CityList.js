@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchQuery } from '../../api';
+import 'materialize-css/dist/css/materialize.min.css'; // Importa Materialize CSS
+import '../style/CityList.css'
 
 const CityList = () => {
   const [cities, setCities] = useState([]);
@@ -52,17 +54,22 @@ const CityList = () => {
             const cityName = city.city.value.split('#')[1]; // definizione di cityName
             console.log(`/images/${cityName}.jpg`);
             return (
-              <div className="col-md-4 mb-4" key={city.city.value}>
-                <div className="card h-100">
-                  <img
-                    src={`/images/citta/${cityName}.jpg`} 
-                    className="card-img-top"
-                    alt={cityName}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{cityName}</h5> {/* Mostra solo il nome della città */}
-                    <p className="card-text">Regione: {city.region.value.split('#')[1]}</p> {/* Mostra solo il nome della regione */}
-                    <Link to={`/attivita/${encodeURIComponent(cityName)}`} className="btn btn-primary">
+              <div className="col s12 m6 l4" key={city.city.value}>
+                <div className="card">
+                  <div className="photo">
+                    <img
+                      src={`/images/citta/${cityName}.jpg`} 
+                      className="card-img-top"
+                      alt={cityName}
+                    />
+                    <div className="photos">Foto</div>
+                  </div>
+                  <div className="content">
+                    <p className="txt4">{cityName}</p>
+                    <p className="txt5">Regione: {city.region.value.split('#')[1]}</p>
+                  </div>
+                  <div className="footerCity">
+                    <Link to={`/attivita/${encodeURIComponent(cityName)}`} className="waves-effect waves-light btn">
                       Vedi Attività
                     </Link>
                   </div>

@@ -1,26 +1,43 @@
-// src/components/Header.js
 import React from 'react';
+import './Header.css'; // Assicurati che il file CSS sia collegato correttamente
 
 const Header = () => {
   return (
-    <div>
-      <div className="sample-header">
-        <div className="sample-header-section">
-          <h1>Scroll down to see the parallax effect</h1>
-          <h2>Background landscape scrolls with its own depth</h2>
+    <div className="parallax-wrapper">
+      <div className="hero parallax-content">
+        <img
+          src="./images/homepage/header.jpg"
+          alt="Vista del Giappone"
+        />
+        <div className="hero__title">
+          <h1>Esplora le Meraviglie del Giappone</h1>
+          <p>
+            Un viaggio tra storia, cultura, arte e tradizioni del Sol Levante. Scopri i luoghi iconici e immergiti nelle 
+            meraviglie di una terra ricca di fascino e bellezza.
+          </p>
         </div>
       </div>
-      <div className="sample-section-wrap">
-        <div className="sample-section">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...</p>
-          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu...</p>
-          <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum...</p>
-          <p>Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna...</p>
-          <p>Cras ultricies mi eu turpis hendrerit fringilla...</p>
-          <p>Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris...</p>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
-          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu...</p>
+      <div className="main-content">
+        <div className="scroll-icon-container">
+          <svg className="icon--down-arrow" viewBox="0 0 24 24">
+            <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" />
+          </svg>
         </div>
+        <h2>Scopri il Giappone in ogni sua sfaccettatura</h2>
+        <p>
+          La Guida del Giappone ti accompagnerà attraverso le meraviglie di questa terra affascinante. 
+          Dai templi antichi di Kyoto alle moderne città di Tokyo e Osaka, esplora la ricca storia, 
+          le tradizioni culturali e i luoghi imperdibili. 
+        </p>
+        <p>
+          Immergiti nelle arti, nella gastronomia e nei parchi naturali che rendono unico il Giappone. Scopri l'evoluzione 
+          storica del paese, dalle sue origini alle influenze contemporanee. Ogni angolo di questa nazione racconta 
+          una storia affascinante e indimenticabile.
+        </p>
+        <p>
+          Con la nostra guida, potrai pianificare il tuo viaggio alla scoperta di posti unici, conoscere le tradizioni più 
+          antiche e vivere un'esperienza culturale completa. Un'avventura straordinaria ti aspetta!
+        </p>
       </div>
     </div>
   );

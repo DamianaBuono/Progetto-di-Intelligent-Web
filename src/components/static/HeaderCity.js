@@ -7,10 +7,10 @@ const HeaderCity = ({ cityName }) => {
   const imagePath = `/images/citta/${cityName}.jpg`;
 
   return (
-    <div className="parallax-wrapper">
-      <div className="hero">
+    <div className="parallax-wrapper-City">
+      <div className="hero-City">
         <img src={imagePath} alt={`Vista di ${cityName}`} />
-        <div className="hero__title">
+        <div className="hero__title-City">
           <h1>Attività a {cityName}</h1>
         </div>
       </div>

@@ -5,7 +5,7 @@ import Navbar from './components/static/Navbar';
 import Home from './components/static/Home';
 import CityList from './components/static/CityList';
 import CityActivitiesList from './components/static/CityActivitiesList';
-import Gastronomia from './components/static/Gastronomia';
+import PiattiTipici from './components/static/PiattiTipici';
 import Posti from './components/static/Posti';
 import Storia from './components/static/Storia';
 import Footer from './Footer';
@@ -23,7 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/citta" element={<CityList />} />
             <Route path="/attivita/:cityName" element={<CityActivitiesList />} />
-            <Route path="/gastronomia" element={<Gastronomia />} />
+            <Route path="/gastronomia" element={<PiattiTipici />} />
             <Route path="/posti-da-visitare" element={<Posti />} />
             <Route path="/storia" element={<Storia />} />
             <Route path="/cultura/arti" element={<Arti />} />

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchQuery } from '../../api';
 import HeaderCity from './HeaderCity';
+import '../style/Elements.css';
 
 const CityActivitiesList = () => {
   const { cityName } = useParams(); // Ottieni il nome della città dall'URL
@@ -151,86 +152,143 @@ const CityActivitiesList = () => {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       
       {restaurants.length > 0 && (
-        <div>
-          <h3>Ristoranti</h3>
-          <ul className="list-group mb-3">
-            {restaurants.map((restaurant) => (
-              <li className="list-group-item" key={restaurant?.restaurant?.value || 'unknown'}>
-                {restaurant?.restaurant?.value.split('#')[1] || 'N/A'}
-              </li>
-            ))}
+        <section className="light">
+        <div className="container py-4">
+          <article className="postcard light red">
+            <a className="postcard__img_link">
+              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div className="postcard__text t-dark">
+              <h1 className="postcard__title red">Ristoranti</h1>
+              <div className="postcard__subtitle small">
+              </div>
+              <div className="postcard__bar"></div>
+              <div className="postcard__preview-txt">
+              <ul className="list-group mb-3">
+                {restaurants.map((restaurant) => (
+                  <li className="list-group-item" key={restaurant?.restaurant?.value || 'unknown'}>
+                    {restaurant?.restaurant?.value.split('#')[1] || 'N/A'}
+                  </li>
+                ))}
           </ul>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
       )}
-      
-      {attractions.length > 0 && (
-        <div>
-          <h3>Attrazioni</h3>
-          <ul className="list-group mb-3">
-            {attractions.map((attraction) => (
-              <li className="list-group-item" key={attraction?.attazioni?.value || 'unknown'}>
-                {attraction?.attazioni?.value.split('#')[1] || 'N/A'}
-                <p className="card-text">Tipologia di Attrazione: {attraction?.tipoAtt?.value || 'N/A'}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-      
+
       {bars.length > 0 && (
-        <div>
-          <h3>Bar</h3>
-          <ul className="list-group mb-3">
-            {bars.map((bar) => (
+        <section className="light">
+        <div className="container py-4">
+          <article className="postcard light red">
+            <a className="postcard__img_link">
+              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div className="postcard__text t-dark">
+              <h1 className="postcard__title red">Bar</h1>
+              <div className="postcard__subtitle small">
+              </div>
+              <div className="postcard__bar"></div>
+              <div className="postcard__preview-txt">
+              <ul className="list-group mb-3">
+              {bars.map((bar) => (
               <li className="list-group-item" key={bar?.bar?.value || 'unknown'}>
                 {bar?.bar?.value.split('#')[1] || 'N/A'}
-                <p className="card-text">Tipologia di Bar: {bar?.tipoBar?.value || 'N/A'}</p>
+                <p className="card-text">{bar?.tipoBar?.value || 'N/A'}</p>
               </li>
             ))}
           </ul>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
       )}
       
       {museums.length > 0 && (
-        <div>
-          <h3>Musei</h3>
-          <ul className="list-group mb-3">
-            {museums.map((museum) => (
+        <section className="light">
+        <div className="container py-4">
+          <article className="postcard light red">
+            <a className="postcard__img_link">
+              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div className="postcard__text t-dark">
+              <h1 className="postcard__title red">Musei</h1>
+              <div className="postcard__subtitle small">
+              </div>
+              <div className="postcard__bar"></div>
+              <div className="postcard__preview-txt">
+              <ul className="list-group mb-3">
+              {museums.map((museum) => (
               <li className="list-group-item" key={museum?.museo?.value || 'unknown'}>
                 {museum?.museo?.value.split('#')[1] || 'N/A'}
                 <p className="card-text">Tipologia di Museo: {museum?.tipoMuseo?.value || 'N/A'}</p>
               </li>
             ))}
           </ul>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
       )}
-      
+
       {temples.length > 0 && (
-        <div>
-          <h3>Templi</h3>
-          <ul className="list-group mb-3">
-            {temples.map((temple) => (
+        <section className="light">
+        <div className="container py-4">
+          <article className="postcard light red">
+            <a className="postcard__img_link">
+              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div className="postcard__text t-dark">
+              <h1 className="postcard__title red">Templi e Santuari</h1>
+              <div className="postcard__subtitle small">
+              </div>
+              <div className="postcard__bar"></div>
+              <div className="postcard__preview-txt">
+              <ul className="list-group mb-3">
+              {temples.map((temple) => (
               <li className="list-group-item" key={temple?.temple?.value || 'unknown'}>
                 {temple?.temple?.value.split('#')[1] || 'N/A'}
                 <p className="card-text">Tipologia: {temple?.value?.value || 'N/A'}</p>
               </li>
             ))}
           </ul>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
       )}
-      
+
       {spas.length > 0 && (
-        <div>
-          <h3>Terme</h3>
-          <ul className="list-group mb-3">
-            {spas.map((spa) => (
+        <section className="light">
+        <div className="container py-4">
+          <article className="postcard light red">
+            <a className="postcard__img_link">
+              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div className="postcard__text t-dark">
+              <h1 className="postcard__title red">Terme</h1>
+              <div className="postcard__subtitle small">
+              </div>
+              <div className="postcard__bar"></div>
+              <div className="postcard__preview-txt">
+              <ul className="list-group mb-3">
+              {spas.map((spa) => (
               <li className="list-group-item" key={spa?.spa?.value || 'unknown'}>
                 {spa?.spa?.value.split('#')[1] || 'N/A'}
               </li>
             ))}
           </ul>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
       )}
+      
     </div>
   );
 };

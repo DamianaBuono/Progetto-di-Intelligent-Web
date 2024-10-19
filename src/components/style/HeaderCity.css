@@ -31,12 +31,12 @@ p {
   line-height: 1.65;
 }
 
-.parallax-wrapper {
+.parallax-wrapper-City {
   height: 100vh;
   overflow: hidden;
 }
 
-.hero {
+.hero-City {
   position: relative;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@ p {
     z-index: 1;
   }
 
-  .hero__title {
+  .hero__title-City {
     color: white;
     z-index: 2;
     text-align: center;

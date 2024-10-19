@@ -1,48 +1,50 @@
 /* src/components/Navbar.css */
 
 .navbar {
-  display: flex;
-  justify-content: space-between; /* Spazio tra il titolo e i link */
-  align-items: center; /* Centra verticalmente il contenuto */
-  background-color: #f7cac9; /* Colore di sfondo primaverile (rosa chiaro) */
-  padding: 10px 20px; /* Padding superiore/inferiore e laterale */
-  width: 100%; /* Occupare tutta la larghezza della pagina */
-  color: white; /* Colore del testo */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leggera ombra per effetto di profondità */
+  z-index: 1050; /* Un valore sufficientemente alto per sovrapporre altri elementi */
+  background-color: #343a40; /* Colore di sfondo scuro */
+  padding: 0.5rem 1rem; /* Padding uniforme */
 }
 
-.navbar h1 {
-  margin: 0; /* Rimuovi margine */
-  font-size: 1.8em; /* Dimensione del titolo */
-  color: #2c3e50; /* Colore del titolo (scuro per contrasto) */
+.navbar-brand {
+  font-size: 1.5rem; /* Dimensione del titolo */
+  font-weight: bold; /* Grassetto per il titolo */
 }
 
-.navbar ul {
-  list-style: none; /* Rimuovi il punto dalla lista */
-  margin: 0; /* Rimuovi margine */
-  padding: 0; /* Rimuovi padding */
-  display: flex; /* Disporre gli elementi in orizzontale */
+.nav-link {
+  margin-left: 15px; /* Spazio tra i link */
+  color: white; /* Colore del testo dei link */
 }
 
-.navbar li {
-  margin-left: 20px; /* Spazio tra i link */
+.nav-link:hover {
+  color: #b0e57c; /* Colore verde chiaro al passaggio del mouse */
 }
 
-.navbar a {
-  color: #2c3e50; /* Colore del testo dei link (scuro per contrasto) */
-  text-decoration: none; /* Rimuovi sottolineatura */
-  padding: 10px 15px; /* Padding uniforme per i link */
-  background-color: #ffffff; /* Colore di sfondo dei link */
-  border-radius: 5px; /* Angoli arrotondati */
-  transition: background-color 0.3s, color 0.3s; /* Transizione per effetto hover */
+.navbar-collapse {
+  justify-content: flex-end; /* Allinea i link a destra */
 }
 
-.navbar a:hover {
-  background-color: #b0e57c; /* Colore verde chiaro al passaggio del mouse */
-  color: #2c3e50; /* Colore del testo rimane scuro al passaggio del mouse */
+/* Stile per il Dropdown */
+.nav-dropdown {
+  background-color: #343a40; /* Colore di sfondo dropdown */
 }
 
-.navbar a.active {
-  background-color: #ecf0f1; /* Colore bianco per il link attivo */
-  color: #ffc3b1; /* Colore del testo per il link attivo */
+.nav-dropdown .dropdown-item:hover {
+  background-color: #ffffff; /* Colore verde chiaro al passaggio del mouse */
+  color: #343a40; /* Colore del testo per il dropdown */
+}
+
+/* Stile mobile */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Colore di sfondo per il mobile */
+  }
+
+  .navbar {
+    padding: 0.5rem; /* Riduci il padding in mobile */
+  }
+
+  .nav-link {
+    margin: 0; /* Rimuovi margine per link in mobile */
+  }
 }

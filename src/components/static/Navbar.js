@@ -1,11 +1,13 @@
-// src/components/Navbar.js
+// src/components/static/Navbar.js
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import '../style/Navbar.css'; // Assicurati che il percorso sia corretto
 
 function MyNavbar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
+      <Navbar.Brand href="/">Il Mio Progetto</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
@@ -30,7 +32,7 @@ function MyNavbar() {
             </LinkContainer>
           </NavDropdown>
           <LinkContainer to="/gastronomia">
-            <Nav.Link>PiattiTipici</Nav.Link>
+            <Nav.Link>Piatti Tipici</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/posti-da-visitare">
             <Nav.Link>Parchi Nazionali</Nav.Link>

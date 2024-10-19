@@ -13,11 +13,12 @@ const Arti = () => {
         PREFIX giappone: <http://www.example.org/giappone#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-        SELECT ?arti ?tu ?mu ?artisti ?ss ?VoP (GROUP_CONCAT(?citta; separator=", ") AS ?cittaOrigine)
+        SELECT ?arti ?tu ?mu ?artisti ?ss ?VoP ?periodoS (GROUP_CONCAT(?citta; separator=", ") AS ?cittaOrigine)
         WHERE {
           {
             ?arti rdf:type giappone:ArtiPerformative .
             ?arti giappone:tecnicaUtilizzata ?tu .
+    		    ?arti giappone:creatoNel ?periodoS .
             OPTIONAL { ?arti giappone:haOrigineA ?citta . }
             BIND("Arti Performative" AS ?VoP)
           }
@@ -28,11 +29,12 @@ const Arti = () => {
             ?arti giappone:materialiUtilizzati ?mu .
             ?arti giappone:AutoreArtista ?artisti .
             ?arti giappone:significatoSimbolico ?ss .
+  			    ?arti giappone:creatoNel ?periodoS .
             OPTIONAL { ?arti giappone:haOrigineA ?citta . }
             BIND("Arti Visive" AS ?VoP)
           }
         }
-        GROUP BY ?arti ?tu ?mu ?artisti ?ss ?VoP
+        GROUP BY ?arti ?tu ?mu ?artisti ?ss ?VoP ?periodoS
       `;
 
       try {
@@ -53,7 +55,7 @@ const Arti = () => {
   }, []);
 
   if (loading) {
-    return <p>Caricamento della storia...</p>;
+    return <p>Caricamento della arti...</p>;
   }
 
   const extractCityName = (cityUri) => {
@@ -85,9 +87,8 @@ const Arti = () => {
                   <p className="card-text">Materiali utilizzati: {item.mu?.value || 'Nessuna informazione a riguardo'}</p>
                   <p className="card-text">Significato Simbolico: {item.ss?.value || 'Nessuna informazione a riguardo'}</p>
                   <p className="card-text">Artisti: {item.artisti?.value || 'Nessuna informazione a riguardo'}</p>
-                  <p className="card-text">
-                    Ha origine a: {item.cittaOrigine ? item.cittaOrigine.value.split(', ').map(extractCityName).join(', ') : 'Non ha una città specifica di origine, ma è praticata in tutto il Giappone'}
-                  </p>
+                  <p className="card-text">Ha origine a: {item.cittaOrigine ? item.cittaOrigine.value.split(', ').map(extractCityName).join(', ') : 'Non ha una città specifica di origine, ma è praticata in tutto il Giappone'} </p>
+                  <p className="card-text">Periodo Storico: {item.periodoS?.value.split('#')[1] || 'N|A'} </p>
                 </div>
               </div>
             </div>
@@ -101,3 +102,4 @@ const Arti = () => {
 };
 
 export default Arti;
+

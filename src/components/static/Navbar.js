@@ -30,10 +30,10 @@ function MyNavbar() {
             </LinkContainer>
           </NavDropdown>
           <LinkContainer to="/gastronomia">
-            <Nav.Link>Gastronomia</Nav.Link>
+            <Nav.Link>PiattiTipici</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/posti-da-visitare">
-            <Nav.Link>Posti da Visitare</Nav.Link>
+            <Nav.Link>Parchi Nazionali</Nav.Link>
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>

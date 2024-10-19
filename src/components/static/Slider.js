@@ -3,22 +3,22 @@ import '../style/Slider.css';
 
 const slideData = [
     {
-        src: '/images/food.jpg',
+        src: '/images/homepage/food.jpg',
         title: 'Cucina Giapponese',
         copy: 'Scopri i sapori unici della cucina giapponese, dai piatti tradizionali come sushi e ramen alle prelibatezze moderne.'
       },
       {
-        src: '/images/restaurant.jpg', 
+        src: '/images/homepage/restaurant.jpg', 
         title: 'Ristoranti Autentici',
         copy: 'Visita ristoranti autentici in Giappone per un’esperienza gastronomica indimenticabile, dove tradizione e modernità si incontrano.'
       },
       {
-        src: '/images/temple.jpg', 
+        src: '/images/homepage/temple.jpg', 
         title: 'Templi Storici',
         copy: 'Esplora i templi storici del Giappone, testimoni di una ricca cultura e spiritualità, che offrono un rifugio di pace.'
       },
       {
-        src: '/images/festival.jpg', 
+        src: '/images/homepage/festival.jpg', 
         title: 'Festival Giapponesi',
         copy: 'Partecipa ai festival vivaci e colorati del Giappone, che celebrano tradizioni antiche e cultura contemporanea.'
       }

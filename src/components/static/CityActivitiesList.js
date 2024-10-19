@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchQuery } from '../../api';
 import HeaderCity from './HeaderCity';
-import '../style/Elements.css';
+import '../style/CityActivitiesList.css';
 
 const CityActivitiesList = () => {
   const { cityName } = useParams(); // Ottieni il nome della città dall'URL
@@ -156,7 +156,7 @@ const CityActivitiesList = () => {
         <div className="container py-4">
           <article className="postcard light red">
             <a className="postcard__img_link">
-              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+              <img className="postcard__img" src="/images/activities/ristorante.jpg" alt="Image Title" />
             </a>
             <div className="postcard__text t-dark">
               <h1 className="postcard__title red">Ristoranti</h1>
@@ -183,7 +183,7 @@ const CityActivitiesList = () => {
         <div className="container py-4">
           <article className="postcard light red">
             <a className="postcard__img_link">
-              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+              <img className="postcard__img" src="/images/activities/bar.jpg" alt="Image Title" />
             </a>
             <div className="postcard__text t-dark">
               <h1 className="postcard__title red">Bar</h1>
@@ -211,7 +211,7 @@ const CityActivitiesList = () => {
         <div className="container py-4">
           <article className="postcard light red">
             <a className="postcard__img_link">
-              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+              <img className="postcard__img" src="/images/activities/museo.jpg" alt="Image Title" />
             </a>
             <div className="postcard__text t-dark">
               <h1 className="postcard__title red">Musei</h1>
@@ -223,7 +223,7 @@ const CityActivitiesList = () => {
               {museums.map((museum) => (
               <li className="list-group-item" key={museum?.museo?.value || 'unknown'}>
                 {museum?.museo?.value.split('#')[1] || 'N/A'}
-                <p className="card-text">Tipologia di Museo: {museum?.tipoMuseo?.value || 'N/A'}</p>
+                <p className="card-text">{museum?.tipoMuseo?.value || 'N/A'}</p>
               </li>
             ))}
           </ul>
@@ -239,7 +239,7 @@ const CityActivitiesList = () => {
         <div className="container py-4">
           <article className="postcard light red">
             <a className="postcard__img_link">
-              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+              <img className="postcard__img" src="/images/activities/tempio.jpg" alt="Image Title" />
             </a>
             <div className="postcard__text t-dark">
               <h1 className="postcard__title red">Templi e Santuari</h1>
@@ -251,7 +251,7 @@ const CityActivitiesList = () => {
               {temples.map((temple) => (
               <li className="list-group-item" key={temple?.temple?.value || 'unknown'}>
                 {temple?.temple?.value.split('#')[1] || 'N/A'}
-                <p className="card-text">Tipologia: {temple?.value?.value || 'N/A'}</p>
+                <p className="card-text">{temple?.value?.value || 'N/A'}</p>
               </li>
             ))}
           </ul>
@@ -267,7 +267,7 @@ const CityActivitiesList = () => {
         <div className="container py-4">
           <article className="postcard light red">
             <a className="postcard__img_link">
-              <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+              <img className="postcard__img" src="/images/activities/terme.jpg" alt="Image Title" />
             </a>
             <div className="postcard__text t-dark">
               <h1 className="postcard__title red">Terme</h1>

@@ -13,11 +13,13 @@
 
 .nav-link {
   margin-left: 15px; /* Spazio tra i link */
-  color: white; /* Colore del testo dei link */
+  color: rgb(255, 255, 255); /* Colore del testo dei link */
 }
 
 .nav-link:hover {
-  color: #b0e57c; /* Colore verde chiaro al passaggio del mouse */
+  background-color: #8b0000;
+  padding: 0.5rem 1rem;
+  color: #ffffff; /* Colore verde chiaro al passaggio del mouse */
 }
 
 .navbar-collapse {
@@ -26,12 +28,11 @@
 
 /* Stile per il Dropdown */
 .nav-dropdown {
-  background-color: #343a40; /* Colore di sfondo dropdown */
+  color: #ffffff; /* Colore del testo per il dropdown */
 }
 
 .nav-dropdown .dropdown-item:hover {
-  background-color: #ffffff; /* Colore verde chiaro al passaggio del mouse */
-  color: #343a40; /* Colore del testo per il dropdown */
+  color: #ffffff; /* Colore del testo per il dropdown */
 }
 
 /* Stile mobile */

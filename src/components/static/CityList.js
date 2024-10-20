@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchQuery } from '../../api';
 import 'materialize-css/dist/css/materialize.min.css'; // Importa Materialize CSS
 import '../style/CityList.css';
+import HeaderCitta from './HeaderCittaList';
 
 const CityList = () => {
   const [cities, setCities] = useState([]);
@@ -50,7 +51,7 @@ const CityList = () => {
 
   return (
     <div className="container mt-3">
-      <h2>Città del Giappone</h2>
+      <HeaderCitta />
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className="row">
         {cities.length > 0 ? (

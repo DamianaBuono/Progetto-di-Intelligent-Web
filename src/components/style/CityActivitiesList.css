@@ -10,7 +10,7 @@ body {
 
 
 .light {
-    background: #f3f5f7;
+    background: #ffffff;
 }
 
 a,
@@ -55,6 +55,7 @@ h1,
 
 .postcard__title {
     font-size: 1.75rem;
+    color: #8b0000 !important;
 }
 
 .postcard__img {
@@ -156,12 +157,12 @@ h1,
 
     .postcard:nth-child(2n+1) .postcard__text::before {
         left: -12px !important;
-        transform: rotate(4deg);
+        transform: rotate(3deg);
     }
 
     .postcard:nth-child(2n+0) .postcard__text::before {
         right: -12px !important;
-        transform: rotate(-4deg);
+        transform: rotate(-3deg);
     }
 }
 
@@ -180,7 +181,7 @@ h1,
     }
 
     .postcard.light .postcard__text:before {
-        background: #e1e5ea;
+        background: #8b0000;
     }
 }
 
@@ -197,7 +198,7 @@ h1,
 }
 
 .red {
-    background-color: #8b0000 !important;
+    background-color: white !important;
 }
 
 @media screen and (min-width: 769px) {
@@ -218,14 +219,14 @@ h1,
 
 .list-group-item {
     position: relative;
-    color: #ffffff !important; /* Colore del testo bianco */
-    background-color: #8b0000 !important; /* Sfondo rosso scuro */
+    color: black !important; /* Colore del testo bianco */
+    background-color: #ffffff !important; /* Sfondo rosso scuro */
     border: none !important; /* Rimuovi il bordo */
 }
 
 /* Rimuovi effetti hover */
 .list-group-item:hover {
-    background-color: #8b0000; /* Mantieni il colore di sfondo uguale all'originale */
+    background-color: #ffffff; /* Mantieni il colore di sfondo uguale all'originale */
 }
 
 .list-group {
@@ -243,5 +244,6 @@ h1,
 .card-text {
     font-size: 16px; /* Dimensione standard per il testo <p> */
     font-weight: normal; /* Facoltativo: testo più leggero rispetto a <li> */
+    color: black !important;
 }
 

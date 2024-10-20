@@ -22,26 +22,29 @@ const CityActivitiesList = () => {
         restaurants: `
           PREFIX giappone: <http://www.example.org/giappone#>
           PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-          SELECT ?restaurant
+          SELECT ?restaurant ?piatto
           WHERE {
             ?restaurant rdf:type giappone:Ristoranti .
             ?restaurant giappone:nellaCittà giappone:${cityName} .
+            OPTIONAL {
+              ?restaurant giappone:haPiattoTipico ?piatto .
+            }
           }
         `,
         attractions: `
           PREFIX giappone: <http://www.example.org/giappone#>
           PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-          SELECT ?attazioni ?tipoAtt
+          SELECT ?attrazioni ?tipoAtt
           WHERE {
             {
-              ?attazioni rdf:type giappone:AttrazioniModerne .
-              ?attazioni giappone:nellaCittà giappone:${cityName} .
+              ?attrazioni rdf:type giappone:AttrazioniModerne .
+              ?attrazioni giappone:nellaCittà giappone:${cityName} .
               BIND("Attrazioni Moderne" AS ?tipoAtt)
             }
             UNION
             {
-              ?attazioni rdf:type giappone:AttrazioniStoriche .
-              ?attazioni giappone:nellaCittà giappone:${cityName} .
+              ?attrazioni rdf:type giappone:AttrazioniStoriche .
+              ?attrazioni giappone:nellaCittà giappone:${cityName} .
               BIND("Attrazioni Storiche" AS ?tipoAtt)
             }
           }
@@ -168,6 +171,7 @@ const CityActivitiesList = () => {
                 {restaurants.map((restaurant) => (
                   <li className="list-group-item" key={restaurant?.restaurant?.value || 'unknown'}>
                     {restaurant?.restaurant?.value.split('#')[1] || 'N/A'}
+                    <p className="card-text">Piatto tipico: {restaurant?.piatto?.value.split('#')[1] || 'Tale ristorante non ha nessun piatto tipico'}</p>
                   </li>
                 ))}
           </ul>
@@ -176,6 +180,34 @@ const CityActivitiesList = () => {
           </article>
         </div>
       </section>
+      )}
+
+      {attractions.length > 0 && (
+        <section className="light">
+          <div className="container py-4">
+            <article className="postcard light red">
+              <a className="postcard__img_link">
+                <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+              </a>
+              <div className="postcard__text t-dark">
+                <h1 className="postcard__title red">Attrazioni</h1>
+                <div className="postcard__subtitle small">
+                </div>
+                <div className="postcard__bar"></div>
+                <div className="postcard__preview-txt">
+                  <ul className="list-group mb-3">
+                    {attractions.map((attraction) => (
+                      <li className="list-group-item" key={attraction?.attrazioni?.value || 'unknown'}>
+                        {attraction?.attrazioni?.value.split('#')[1] || 'N/A'}
+                        <p className="card-text">Tipo: {attraction?.tipoAtt?.value}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
       )}
 
       {bars.length > 0 && (
@@ -192,12 +224,12 @@ const CityActivitiesList = () => {
               <div className="postcard__bar"></div>
               <div className="postcard__preview-txt">
               <ul className="list-group mb-3">
-              {bars.map((bar) => (
-              <li className="list-group-item" key={bar?.bar?.value || 'unknown'}>
-                {bar?.bar?.value.split('#')[1] || 'N/A'}
-                <p className="card-text">{bar?.tipoBar?.value || 'N/A'}</p>
-              </li>
-            ))}
+                {bars.map((bar) => (
+                  <li className="list-group-item" key={bar?.bar?.value || 'unknown'}>
+                    {bar?.bar?.value.split('#')[1] || 'N/A'}
+                    <p className="card-text">Tipo: {bar?.tipoBar?.value}</p>
+                  </li>
+                ))}
           </ul>
               </div>
             </div>
@@ -205,7 +237,7 @@ const CityActivitiesList = () => {
         </div>
       </section>
       )}
-      
+
       {museums.length > 0 && (
         <section className="light">
         <div className="container py-4">
@@ -220,12 +252,12 @@ const CityActivitiesList = () => {
               <div className="postcard__bar"></div>
               <div className="postcard__preview-txt">
               <ul className="list-group mb-3">
-              {museums.map((museum) => (
-              <li className="list-group-item" key={museum?.museo?.value || 'unknown'}>
-                {museum?.museo?.value.split('#')[1] || 'N/A'}
-                <p className="card-text">{museum?.tipoMuseo?.value || 'N/A'}</p>
-              </li>
-            ))}
+                {museums.map((museo) => (
+                  <li className="list-group-item" key={museo?.museo?.value || 'unknown'}>
+                    {museo?.museo?.value.split('#')[1] || 'N/A'}
+                    <p className="card-text">Tipo: {museo?.tipoMuseo?.value}</p>
+                  </li>
+                ))}
           </ul>
               </div>
             </div>
@@ -248,12 +280,12 @@ const CityActivitiesList = () => {
               <div className="postcard__bar"></div>
               <div className="postcard__preview-txt">
               <ul className="list-group mb-3">
-              {temples.map((temple) => (
-              <li className="list-group-item" key={temple?.temple?.value || 'unknown'}>
-                {temple?.temple?.value.split('#')[1] || 'N/A'}
-                <p className="card-text">{temple?.value?.value || 'N/A'}</p>
-              </li>
-            ))}
+                {temples.map((temple) => (
+                  <li className="list-group-item" key={temple?.temple?.value || 'unknown'}>
+                    {temple?.temple?.value.split('#')[1] || 'N/A'}
+                    <p className="card-text">Tipo di luogo di culto: {temple?.value?.value}</p>
+                  </li>
+                ))}
           </ul>
               </div>
             </div>
@@ -276,11 +308,11 @@ const CityActivitiesList = () => {
               <div className="postcard__bar"></div>
               <div className="postcard__preview-txt">
               <ul className="list-group mb-3">
-              {spas.map((spa) => (
-              <li className="list-group-item" key={spa?.spa?.value || 'unknown'}>
-                {spa?.spa?.value.split('#')[1] || 'N/A'}
-              </li>
-            ))}
+                {spas.map((spa) => (
+                  <li className="list-group-item" key={spa?.spa?.value || 'unknown'}>
+                    {spa?.spa?.value.split('#')[1] || 'N/A'}
+                  </li>
+                ))}
           </ul>
               </div>
             </div>
@@ -288,7 +320,7 @@ const CityActivitiesList = () => {
         </div>
       </section>
       )}
-      
+
     </div>
   );
 };

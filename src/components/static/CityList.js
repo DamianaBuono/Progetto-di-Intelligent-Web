@@ -16,10 +16,13 @@ const CityList = () => {
         PREFIX giappone: <http://www.example.org/giappone#>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-        SELECT ?city ?region
+        SELECT ?city ?region ?cultura
         WHERE {
           ?city rdf:type giappone:Città .
           ?city giappone:nellaRegione ?region .
+           OPTIONAL {
+            ?city giappone:haOrigine ?cultura .
+          }
         }
       `;
       
@@ -67,6 +70,9 @@ const CityList = () => {
                   <div className="content">
                     <p className="txt4">{cityName}</p>
                     <p className="txt5">Regione: {city.region.value.split('#')[1]}</p>
+                  </div>
+                  <div className="content">
+                    <p className="txt6">Ha origine la cultura: {city?.cultura?.value.split('#')[1] || 'Nessuna cultura ha origine da questa città!'}</p>
                   </div>
                   <div className="footerCity">
                     <Link to={`/attivita/${encodeURIComponent(cityName)}`} className="waves-effect waves-light btn">

@@ -119,3 +119,10 @@ h1{
 .fa-clock, .fa-comments{
     margin-right: 7px;
 }
+
+
+.txt6{
+    font-size:20px;
+    position: relative;
+    top: 33px;
+}

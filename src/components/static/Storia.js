@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../../api';
 import '../style/CityList.css';
+import HeaderStoria from './HeaderStoria';
 
 const Storia = () => {
   const [storia, setStoria] = useState([]);
@@ -72,7 +73,7 @@ const Storia = () => {
 
   return (
     <div className="container mt-3">
-      <h2>Storia del Giappone</h2>
+      <HeaderStoria />
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {sortedStoria.length > 0 ? (
         <div className="row">

@@ -1,6 +1,7 @@
 // src/components/Festivita.js
 import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../../api';
+import HeaderFestival from './HeaderFestival';
 
 const Festivita = () => {
   const [arti, setArti] = useState([]);
@@ -54,33 +55,46 @@ const Festivita = () => {
 
   return (
     <div className="container mt-3">
-      <h2>Festival del Giapponesi</h2>
+      <HeaderFestival />
+
       {error && <p style={{ color: 'red' }}>{error}</p>}
+
+
+
       {arti.length > 0 ? (
-        <div className="row">
-          {arti.map((item) => (
-            <div className="col-md-4 mb-4" key={item.festa?.value || item.festa.value}>
-              <div className="card h-100">
-                <img
-                  src={`/images/festivita/${item.festa?.value.split('#')[1]}.jpg`} 
-                  className="card-img-top"
-                  alt={item.festa?.value || 'Immagine non disponibile'}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item.festa.value.split('#')[1]}</h5>
+        <section className="light">
+        {arti.map((item) => (
+        <div className="container py-4" key={item.festa?.value || item.festa.value}>
+          <article className="postcard light red">
+            <a className="postcard__img_link">
+              <img className="postcard__img" 
+              src={`/images/festivita/${item.festa?.value.split('#')[1]}.jpg`} 
+              alt={item.festa?.value || 'Immagine non disponibile'}
+              />
+            </a>
+            <div className="postcard__text t-dark">
+              <h1 className="postcard__title red">{item.festa.value.split('#')[1]}</h1>
+              <div className="postcard__subtitle small">
+              </div>
+              <div className="postcard__bar"></div>
+              <div className="postcard__preview-txt">
+              <div className="card-body">
                   <p className="card-text">Tecnica utilizzata: {item.tu?.value || 'Nessuna informazione a riguardo'}</p>
                   <p className="card-text">Materiali utilizzati: {item.mu?.value || 'Nessuna informazione a riguardo'}</p>
                   <p className="card-text">Significato Simbolico: {item.ss?.value || 'Nessuna informazione a riguardo'}</p>
                   <p className="card-text">Ha origine a: {item.cittaOrigine ? item.cittaOrigine.value.split(', ').map(extractCityName).join(', ') : 'Non ha una città specifica di origine, ma è praticata in tutto il Giappone'} </p>
-                  <p className="card-text">Periodo Storico: {item.periodoS?.value.split('#')[1] || 'N|A'} </p>
+                  <p className="card-text">{item.periodoS?.value.split('#')[1] || 'N|A'} </p>
                 </div>
               </div>
             </div>
-          ))}
+          </article>
         </div>
+        ))}
+      </section>
       ) : (
         <p>Nessun dato disponibile.</p>
       )}
+
     </div>
   );
 };

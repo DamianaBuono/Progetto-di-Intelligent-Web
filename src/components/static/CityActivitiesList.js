@@ -187,7 +187,7 @@ const CityActivitiesList = () => {
           <div className="container py-4">
             <article className="postcard light red">
               <a className="postcard__img_link">
-                <img className="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+                <img className="postcard__img" src="/images/activities/attrazioni.jpg" alt="Image Title" />
               </a>
               <div className="postcard__text t-dark">
                 <h1 className="postcard__title red">Attrazioni</h1>

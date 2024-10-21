@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../../api';
 import '../style/CityList.css';
+import HeaderParchi from './HeaderParchi';
 
 const Posti = () => {
   const [parchi, setParchi] = useState([]);
@@ -44,7 +45,7 @@ const Posti = () => {
 
   return (
     <div className="container mt-3">
-      <h2>Parchi Nazionali</h2>
+      <HeaderParchi />
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {parchi.length > 0 ? (
         <div className="row">
@@ -65,7 +66,7 @@ const Posti = () => {
                   </div>
                   <div className="card-body">
                     <h5 className="txt5">{parchiNome}</h5>
-                    <p className="txt2">Il parco {parchiNome} si estende nella regione di {regions.length > 0 ? regions.join(' e di ') : ' Nessuna regione è associata a questo parco!'}</p>
+                    <p className="txt2">Si estende nella regione di {regions.length > 0 ? regions.join(' e di ') : ' Nessuna regione è associata a questo parco!'}</p>
                   </div>
                 </div>
               </div>

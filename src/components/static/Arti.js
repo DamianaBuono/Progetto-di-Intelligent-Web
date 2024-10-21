@@ -101,7 +101,7 @@ const Arti = () => {
                             </>
                           )}
                           <p className="card-text">Ha origine a: {item.cittaOrigine ? item.cittaOrigine.value.split(', ').map(extractCityName).join(', ') : 'Non ha una città specifica di origine, ma è praticata in tutto il Giappone'}</p>
-                          <p className="card-text">Periodo Storico: {item.periodoS?.value.split('#')[1] || 'N|A'}</p>
+                          <p className="card-text">{item.periodoS?.value.split('#')[1] || 'N|A'}</p>
                         </ul>
                       </div>
                     </div>

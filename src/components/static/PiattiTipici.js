@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchQuery } from '../../api';
 import '../style/CityList.css';
+import HeaderPiatti from './HeaderPiatti';
 
 const PiattiTipici = () => {
   const [PiattiTipici, setPiattiTipici] = useState([]);
@@ -43,7 +44,7 @@ const PiattiTipici = () => {
 
   return (
     <div className="container mt-3">
-      <h2>Storia del Giappone</h2>
+      <HeaderPiatti />
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {PiattiTipici.length > 0 ? (
         <div className="row">
@@ -63,8 +64,7 @@ const PiattiTipici = () => {
                   </div>
                   <div className="card-body">
                     <h5 className="txt5">{piattoTipico}</h5>
-                    <p className="txt2">Descrizione del piatto: {item.desc.value}</p>
-                    
+                    <p className="txt2">{item.desc.value}</p>
                   </div>
                 </div>
               </div>

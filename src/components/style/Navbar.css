@@ -22,6 +22,12 @@
   color: #ffffff; /* Colore verde chiaro al passaggio del mouse */
 }
 
+.dropdown-item.active, .dropdown-item:active {
+  color: var(--bs-dropdown-link-active-color);
+  text-decoration: none;
+  background-color: #8b0000;
+}
+
 .navbar-collapse {
   justify-content: flex-end; /* Allinea i link a destra */
 }
@@ -32,6 +38,7 @@
 }
 
 .nav-dropdown .dropdown-item:hover {
+  background-color: #8b0000;
   color: #ffffff; /* Colore del testo per il dropdown */
 }
 

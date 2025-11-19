@@ -1,3 +1,168 @@
+# Alla Scoperta del Giappone – Ontologia e Web Application
+## Descrizione
+
+“**Alla scoperta del Giappone**” è un progetto che nasce con l’obiettivo di creare un’applicazione web interattiva che permetta agli utenti di esplorare la cultura, le città, la storia, le tradizioni e la gastronomia del Giappone.
+Per garantire una rappresentazione **strutturata, semantica e flessibile** delle informazioni, il progetto si basa sulla realizzazione di un’**ontologia** invece che su un semplice dataset tradizionale.
+
+L’ontologia consente di modellare in modo chiaro le relazioni tra concetti come città, arti, tradizioni, piatti tipici, periodi storici e molto altro, facilitando anche l’interrogazione tramite **SPARQL**.
+
+## Tecnologie Utilizzate
+* **Node.js** – Runtime JavaScript lato server utilizzato per gestire logica backend e interrogazioni all’ontologia.
+
+* **Visual Studio Code** – Editor di sviluppo utilizzato per scrivere, organizzare e gestire il codice del progetto.
+
+* **Apache Jena** – Framework per il Semantic Web utilizzato per gestire ontologie, triple store e interrogazioni SPARQL.
+
+* **Protégé** – Editor ontologico per la modellazione delle classi, delle proprietà e della struttura semantica del dominio.
+
+* **React** – Libreria JavaScript per costruire l’interfaccia web interattiva e dinamica dell’applicazione.
+
+* **JavaScript** – Linguaggio principale usato per la logica dell’applicazione, l’interazione con l’ontologia e il frontend.
+
+* **CSS** – Utilizzato per la definizione dello stile, del layout e della grafica dell’intero sito web.
+
+## Motivazione
+
+Il progetto è guidato da:
+
+* la passione per la cultura giapponese
+
+* il desiderio di creare un sistema di esplorazione intuitivo e accessibile
+
+* la volontà di sperimentare strumenti moderni per la gestione semantica dell’informazione
+
+* la necessità di offrire un’esperienza informativa immersiva e ben strutturata
+
+## Modellazione dell’Ontologia
+
+L’ontologia è composta da:
+
+### Classi
+
+Rappresentano i concetti principali, come:
+
+* Città
+
+* Arti (visive, performative)
+
+* Tradizioni
+
+* Periodi Storici
+
+* Piatti Tipici
+
+* Festività
+
+* Parchi Nazionali
+
+### Object Property
+
+Definiscono le relazioni tra concetti, ad esempio:
+
+* una città appartiene a una regione
+
+* una festività è legata a uno specifico periodo storico
+
+* una tradizione utilizza determinate tecniche e materiali
+
+### Data Property
+
+Permettono di associare ai concetti valori testuali e descrittivi (es. nome, significato simbolico, descrizione dei piatti).
+
+## Popolamento dell’Ontologia
+
+L’ontologia è stata popolata includendo:
+
+* Città e relative regioni
+
+* Arti visive e performative
+
+* Tradizioni, tecniche, materiali e autori
+
+* Festività e i relativi legami con periodi storici e città
+
+* Piatti tipici con descrizione
+
+* Parchi nazionali e regioni in cui si estendono
+
+La rappresentazione semantica consente un’esplorazione coerente e ben strutturata del patrimonio culturale giapponese.
+
+## Query SPARQL
+
+L’ontologia è interrogabile tramite SPARQL.
+
+Esempi di funzionalità ottenute tramite query:
+
+### Città
+
+Restituisce tutte le città e le loro regioni di appartenenza, con eventuale associazione alle culture correlate (gestite tramite raggruppamento concatenato).
+
+### Attività nelle città
+
+Permette di visualizzare attività e punti d'interesse nelle diverse località.
+
+### Periodi storici
+
+Interroga i quattro principali periodi della storia giapponese:
+
+* Giappone Classico
+
+* Giappone Medioevale
+
+* Giappone Pre-Moderno
+
+* Giappone Moderno
+
+### Arti
+
+Restituisce tutte le arti visive e performative modellate nell’ontologia.
+
+### Festività
+
+Restituisce le festività, con eventuali informazioni su:
+
+* tecniche utilizzate
+
+* materiali
+
+* significato simbolico
+
+* città coinvolte
+
+* periodi storici
+
+### Tradizioni
+
+Restituisce le tradizioni culturali del Giappone, con tutte le loro caratteristiche (materiali, tecniche, autori, città e periodi).
+
+### Piatti tipici
+
+Restituisce piatti tipici giapponesi con le relative descrizioni.
+
+### Parchi nazionali
+
+Restituisce i parchi nazionali e le regioni coinvolte (una o due), gestendo correttamente i casi multipli con raggruppamento concatenato.
+
+### Conclusioni
+
+L’ontologia sviluppata offre una rappresentazione semantica completa e flessibile del patrimonio culturale giapponese.
+Permette di esplorare il Giappone attraverso concetti interconnessi, supportando un’applicazione web intuitiva e ricca di contenuti.
+La struttura semantica facilita interrogazioni precise e consente un arricchimento futuro del modello.
+
+### Sviluppi futuri
+
+* Sono previste possibili estensioni quali:
+
+* Integrazione di **hotel, B&B e altre forme di alloggio**
+
+* Visualizzazione delle attrazioni e attività vicine alla struttura scelta dall’utente
+
+* Creazione di un **itinerario di viaggio personalizzato** basato su preferenze e localizzazione
+
+* Ampliamento dell’ontologia con ulteriori aspetti culturali e geografici
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
